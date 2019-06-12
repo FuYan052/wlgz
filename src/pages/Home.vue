@@ -1,4 +1,5 @@
 <template>
+<div class="homeBox">
   <div class="home">
     <!-- logo -->
     <div class="pz_top hidden-xs">
@@ -10,6 +11,37 @@
     </div>
     <!-- 轮播图 -->
     <banner></banner>
+		<!-- 右侧固定联系方式 -->
+		<div class="rightFixed">
+			<ul>
+            <li>
+                <img src="/templates/cn/images/right1.png" alt="">
+                <div class="ewm">
+                    <p><img src="http://www.chuangwudao.com/upload/images/20190213/6368564665098437507920334.jpg" title="" alt="" /></p>
+                </div>
+            </li>
+            <!-- <li><a href="http://p.qiao.baidu.com/cps/chat?siteId=9464443&userId=20744346" target="_blank">
+                    <img src="/templates/cn/images/right11.png" alt="">
+                    <h4><img src="/templates/cn/images/right1.png" alt="">在线咨询</h4>
+                </a></li> -->
+            <li><a href="javascript:;" class="r_tel1">
+                    <img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
+                    <h4><img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
+                        <p>15901331708</p>
+                    </h4>
+                </a></li>
+            <li><a href="javascript:;" class="r_tel2">
+                    <img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
+                    <h4><img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
+                        <p>010-85891412</p>
+                    </h4>
+                </a></li>
+            <li class="last"><a href="javascript:scrollTo('#top',0,300)"><img src="http://www.chuangwudao.com/templates/cn/images/right1.png"
+                        alt=""></a></li>
+        </ul>
+		</div>
+		<!-- 切换导航页面按钮 -->
+		<div class="navBtn" @mouseover="showNav"></div>
     <!-- 左侧导航栏 -->
       <ul class="leftnav">
         <li data-menuanchor="1" class="active first"><a href="#1" title="创物道">1<span>创物道</span></a></li>
@@ -44,11 +76,43 @@
 		<!-- 联系 -->
 		<contact></contact>
   </div>
+	<!-- 默认隐藏的导航页 -->
+	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
+		<div class="closed" @click="closeNav">
+			<div class="logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo3710948.png" alt="" title=""></a></div>
+			<div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
+		</div>
+		<div id="navSlide" class="ph_menu">
+            <div class='nav_box'>
+                <li class="nli l1" id="nav_1">
+                    <p><span><a href="/" target="_self" class="l1_a" title="首 页">首 页<i>Home</i></a></span></p>
+                </li>
+                <li class="nli l2" id="nav_2">
+                    <p><span><a href="/page/2.htm" target="_self" class="l1_a" title="我 们">案 例<i>Case</i></a></span>
+                    </p>
+                </li>
+                <li class="nli l3" id="nav_3">
+                    <p><span><a href="/list/10/" target="_self" class="l1_a" title="案 例">服 务<i>Service</i></a></span></p>
+                </li>
+								<li class="nli l5" id="nav_5">
+                    <p><span><a href="/list/5/" target="_self" class="l1_a" title="客 户">客 户<i>Customer</i></a></span>
+                    </p>
+                </li>
+                <li class="nli l6" id="nav_6">
+                    <p><span><a href="/list/7/" target="_self" class="l1_a" title="新 闻">新 闻<i>News</i></a></span></p>
+                </li>
+								<li class="nli l4" id="nav_4">
+                    <p><span><a href="/#3" target="_self" class="l1_a" title="服 务">我 们<i>About</i></a></span></p>
+                </li>
+            </div>
+        </div>
+	</div>
+</div>
 </template>
 
 <script>
 import Banner from '../components/home/Banner.vue'
-import Case from '../components/home/Case.vue'
+import HomeCase from '../components/home/HomeCase.vue'
 import Service from '../components/home/Service.vue'
 import Customer from '../components/home/Customer.vue'
 import Contact from '../components/home/Contact.vue'
@@ -56,26 +120,295 @@ export default {
   name: 'Home',
   components: {
     Banner,
-    Case,
+    HomeCase,
     Service,
     Customer,
     Contact,
-  }
+	},
+	data() {
+		return{
+			isShowNav: false
+		}
+	},
+	methods: {
+		// 鼠标滑过按钮显示导航页
+		showNav(){
+			this.isShowNav = true
+		},
+		// 鼠标滑过按钮隐藏导航页
+		closeNav(){
+			this.isShowNav = false
+		}
+	}
 }
 </script>
 
 <style lang="scss" scoped>
-.home{
-  width: 100%;
-  position: relative;
-  .logo{
-    position: absolute;
+.homeBox{
+	width: 100%;
+	height: 100%;
+	.home{
+		width: 100%;
+		position: relative;
+		.logo{
+			position: absolute;
 
-    z-index: 99;
-  }
+			z-index: 99;
+		}
+	}
+	.navPage{
+		.closed{
+			width: 100%;
+			height: 120px;
+			float: left;
+			padding: 0.4rem 0.4rem 0 0.6rem;
+			.logo{
+				float: left;
+    		margin-top: 7px;
+				width: 2.04rem;
+				img{
+					width: 100%;
+    			float: left;
+				}
+			}
+			.pf_menu_btn{
+				float: right;
+				cursor: pointer;
+				width: 40px;
+				margin-right: 30px;
+				img{
+					width: 100%;
+					float: left;
+					-webkit-transition: all 0.3s ease-out 0s;
+					-moz-transition: all 0.3s ease-out 0s;
+					-o-transition: all 0.3s ease-out 0s;
+					transition: all 0.3s ease-out 0s;
+				}
+			}
+			.pf_menu_btn:hover{
+				img{
+					transform: rotate(180deg);
+				}
+			}
+		}
+		.ph_menu {
+			position: absolute;
+			left: 0;
+			top: 120px;
+			height: 100%;
+			width: 100%;
+			text-align: left;
+			overflow: hidden;
+			border-top: solid 1px #353536;
+			.nav_box {
+				width: 100%;
+				position: relative;
+				height: 100%;
+				.nli {
+					float: left;
+					position: relative;
+					height: 100%;
+					width: 16.666%;
+					border-right: solid 1px #353536;
+					p{
+						span{
+							float: left;
+							width: 100%;
+							padding-top: 56px;
+							text-align: center;
+							-webkit-transition: all 0.3s ease-out 0s;
+							-moz-transition: all 0.3s ease-out 0s;
+							-o-transition: all 0.3s ease-out 0s;
+							transition: all 0.3s ease-out 0s;
+							.l1_a {
+								float: left;
+								width: 100%;
+								color: #fff;
+								font-size: 24px;
+								line-height: 32px;
+								padding: 0 10px;
+								position: relative;
+								i{
+									display: block;
+									width: 100%;
+									font-size: 14px;
+									color: #aeaeae;
+									line-height: 18px;
+									text-transform: uppercase;
+									font-style: normal;
+								}
+							}
+						}
+					}
+				}
+				.nli:hover{
+					.l1_a {
+						color: #fa2812;
+						font-weight: bold;
+						i{
+							font-weight: normal;
+						}
+					}
+					span {
+						padding-top: 78px;
+					}
+				}
+			}
+		}
+	}
+	.navPageShow{
+		left: 0;
+	}
 }
 </style>
 <style>
+.rightFixed{
+	position: fixed;
+	right: 31px;
+	top: 50%;
+	margin-top: -101px;
+	z-index: 8;
+}
+.rightFixed ul {
+	width: 50px;
+	float: left;
+	background: #474747;
+}
+.rightFixed ul li {
+	width: 50px;
+	height: 51px;
+	float: left;
+	border-top: solid 1px #575757;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	text-align: center;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
+.rightFixed ul li:nth-child(1){
+	border-top: 0;
+}
+.rightFixed ul li a img{
+	float: none;
+	height: 50px;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
+.rightFixed ul li h4 {
+    position: absolute;
+    right: -100px;
+    top: 0;
+    width: 173px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    font-size: 16px;
+    font-family: Arial;
+    opacity: 0;
+    z-index: 2;
+    letter-spacing: 1px;
+    background: url('http://www.chuangwudao.com/templates/cn/images/right4.jpg') no-repeat center center;
+    background-size: 100% 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.rightFixed ul li h4 img {
+    width: 40px;
+    max-width: none;
+    margin-left: -10px;
+}
+.rightFixed ul li h4 p {
+	display: inline-block;
+}
+
+.rightFixed ul li:hover {
+	overflow: visible;
+	background: url('http://www.chuangwudao.com/templates/cn/images/right4.jpg') no-repeat center center;
+	background-size: 100% 100%;
+}
+
+.rightFixed ul li:hover h4 {
+	right: 0;
+	opacity: 1;
+}
+.rightFixed ul li .ewm {
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	margin-top: -56px;
+	width: 121px;
+	text-align: center;
+	height: 112px;
+	background: url('http://www.chuangwudao.com/templates/cn/images/right6.png') no-repeat center center;
+	opacity: 0;
+	z-index: 1;
+	padding: 10px 18px 10px 10px;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
+
+.rightFixed ul li .ewm img {
+	width: 100%;
+	float: left;
+	height: auto;
+	margin: 0;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-khtml-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.rightFixed ul li:hover .ewm {
+	right: 110%;
+	opacity: 1;
+}
+
+.rightFixed ul li.last img {
+	width: 100%;
+	height: auto;
+	margin-top: 0;
+}
+.navBtn{
+	position: fixed;
+	cursor: pointer;
+	right: 0.5rem;
+	top: 0.5rem;
+	width: 0.2rem;
+	height: 0.16rem;
+	text-align: center;
+	display: block;
+	z-index: 82;
+	background: url('../assets/navBtn.png') no-repeat center center;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
+.navPage{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: -100%;
+	top: 0;
+	display: block !important;
+	float: left;
+	z-index: 101;
+	background: rgba(0,0,0,0.8);
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+	-o-transition: all 0.3s ease-out 0s;
+	transition: all 0.3s ease-out 0s;
+}
 .leftnav {
 	position: fixed;
 	left: 0.35rem;
