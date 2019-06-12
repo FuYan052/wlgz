@@ -88,7 +88,7 @@
                     <p><span><a href="/" target="_self" class="l1_a" title="首 页">首 页<i>Home</i></a></span></p>
                 </li>
                 <li class="nli l2" id="nav_2">
-                    <p><span><a href="/page/2.htm" target="_self" class="l1_a" title="我 们">案 例<i>Case</i></a></span>
+                    <p><span @click="toCasePage"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="我 们">案 例<i>Case</i></a></span>
                     </p>
                 </li>
                 <li class="nli l3" id="nav_3">
@@ -138,6 +138,11 @@ export default {
 		// 鼠标滑过按钮隐藏导航页
 		closeNav(){
 			this.isShowNav = false
+		},
+		toCasePage(){
+			this.$router.push({
+				path: '/case'
+			})
 		}
 	}
 }
