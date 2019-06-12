@@ -36,19 +36,30 @@
     </div>
 
     <!-- 案例 -->
-    <case></case>
+    <Case></Case>
+		<!-- 服务 -->
+		<Service></Service>
+		<!-- 客户 -->
+		<customer></customer>
+		<!-- 联系 -->
+		<contact></contact>
   </div>
 </template>
 
 <script>
 import Banner from '../components/home/Banner.vue'
 import Case from '../components/home/Case.vue'
+import Service from '../components/home/Service.vue'
+import Customer from '../components/home/Customer.vue'
+import Contact from '../components/home/Contact.vue'
 export default {
   name: 'Home',
   components: {
     Banner,
     Case,
-
+    Service,
+    Customer,
+    Contact,
   }
 }
 </script>
@@ -76,10 +87,10 @@ export default {
 
 .home .leftnav:before {
 	content: '';
-	width: 1px;
+	width: 0.01rem;
 	height: 90%;
-	background: white;
-	opacity: 0.1;
+	background: #ccc;
+	opacity: 0.6;
 	position: absolute;
 	left: 50%;
 	top: -95%;
@@ -87,10 +98,10 @@ export default {
 
 .home .leftnav:after {
 	content: '';
-	width: 1px;
+	width: 0.01rem;
 	height: 90%;
-	background: white;
-	opacity: 0.1;
+	background: #ccc;
+	opacity: 0.6;
 	position: absolute;
 	left: 50%;
 	bottom: -95%;
