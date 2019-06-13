@@ -51,7 +51,7 @@
         <li data-menuanchor="5"><a href="#5" title="联系">5<span>联系</span></a></li>
     </ul>
     <!-- 手机可见菜单 -->
-    <div class="pz_top visible-xs">
+    <!-- <div class="pz_top visible-xs">
         <div class="top">
             <div class="logo"><a href="/" title=""><img class="img-responsive" src="../assets/logo.png"></a></div>
             <div class="menulist">
@@ -65,10 +65,10 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 案例 -->
-    <Case></Case>
+    <home-case></home-case>
 		<!-- 服务 -->
 		<Service></Service>
 		<!-- 客户 -->
@@ -85,24 +85,24 @@
 		<div id="navSlide" class="ph_menu">
             <div class='nav_box'>
                 <li class="nli l1" id="nav_1">
-                    <p><span><a href="/" target="_self" class="l1_a" title="首 页">首 页<i>Home</i></a></span></p>
+                    <p><span @click="toHome"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="首 页">首 页<i>Home</i></a></span></p>
                 </li>
                 <li class="nli l2" id="nav_2">
                     <p><span @click="toCasePage"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="我 们">案 例<i>Case</i></a></span>
                     </p>
                 </li>
                 <li class="nli l3" id="nav_3">
-                    <p><span><a href="/list/10/" target="_self" class="l1_a" title="案 例">服 务<i>Service</i></a></span></p>
+                    <p><span @click="toService"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="案 例">服 务<i>Service</i></a></span></p>
                 </li>
 								<li class="nli l5" id="nav_5">
-                    <p><span><a href="/list/5/" target="_self" class="l1_a" title="客 户">客 户<i>Customer</i></a></span>
+                    <p><span @click="toCurpartner"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="客 户">客 户<i>Customer</i></a></span>
                     </p>
                 </li>
                 <li class="nli l6" id="nav_6">
-                    <p><span><a href="/list/7/" target="_self" class="l1_a" title="新 闻">新 闻<i>News</i></a></span></p>
+                    <p><span @click="toNews"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="新 闻">新 闻<i>News</i></a></span></p>
                 </li>
 								<li class="nli l4" id="nav_4">
-                    <p><span><a href="/#3" target="_self" class="l1_a" title="服 务">我 们<i>About</i></a></span></p>
+                    <p><span @click="toAbout"><a href="javascrip:viod(0)" target="_self" class="l1_a" title="服 务">我 们<i>About</i></a></span></p>
                 </li>
             </div>
         </div>
@@ -139,9 +139,40 @@ export default {
 		closeNav(){
 			this.isShowNav = false
 		},
+		toHome(){
+			this.$router.push({
+				path: '/',
+				name: 'Home'
+			})
+		},
 		toCasePage(){
 			this.$router.push({
-				path: '/case'
+				path: '/case',
+				name: 'Case'
+			})
+		},
+		toService(){
+			this.$router.push({
+				path: '/service',
+				name: 'ServicePage'
+			})
+		},
+		toCurpartner(){
+			this.$router.push({
+				path: '/curpartner',
+				name: 'Curpartner'
+			})
+		},
+		toNews(){
+			this.$router.push({
+				path: '/news',
+				name: 'News'
+			})
+		},
+		toAbout(){
+			this.$router.push({
+				path: '/about',
+				name: 'About'
 			})
 		}
 	}

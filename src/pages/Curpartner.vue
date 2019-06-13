@@ -1,55 +1,30 @@
 <template>
-  <div class="casePage">
+  <div class="partner">
     <div class="topnav">
-      <div class="top">
-        <div class="case-logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo25606209.jpg"></a></div>
-        <!-- 导航切换按钮 -->
-        <div class="navBtn" @mouseover="showNav"></div>
-      </div>
-  </div>
-  <!-- 标题 -->
-  <div class="pageTitle">
-    <p class="chinTitle">案例</p>
-    <p class="engTitle">Projects</p>
-    <p></p>
-  </div>
-  <!-- 分类按钮 -->
-  <div class="cateBtn">
-    <ul>
-      <li>
-        全部
-      </li>
-      <li>
-        办公空间
-      </li>
-      <li>
-        餐饮空间设计
-      </li>
-      <li>
-        酒店会所设计
-      </li>
-      <li>
-        住宅空间设计
-      </li>
-      <li>
-        住宅空间设计
-      </li>
-      <li class="last">
-        其它
-      </li>
-    </ul>
-  </div>
-  <!-- 案例列表 -->
-  <div class="caseList">
-    <ul>
-      <li v-for="item in 7" :key="item">
-        <img src="../assets/casePic.png" alt="">
-        <h4>艺廊及商店改造</h4>
-        <h6>办公空间设计</h6>
-      </li>
-    </ul>
-  </div>
-  <!-- 分页器 -->
+        <div class="top">
+          <div class="case-logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo25606209.jpg"></a></div>
+          <!-- 导航切换按钮 -->
+          <div class="navBtn" @mouseover="showNav"></div>
+        </div>
+    </div>
+    <!-- 标题 -->
+    <div class="pageTitle">
+      <p class="chinTitle">合作伙伴</p>
+      <p class="engTitle">Curpartner</p>
+    </div>
+    <!-- 合作列表 -->
+    <div class="partnerList">
+      <table>
+        <tr v-for="item in 4" :key="item">
+          <td v-for="it in 4" :key="it">
+            <span>
+              <img src="../assets/kehu.png" alt="">
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- 分页器 -->
   <div class="page">
     <el-pagination
       background
@@ -59,7 +34,8 @@
   </div>
   <!-- 网页脚部 -->
   <page-bottom></page-bottom>
-<!-- 默认隐藏的导航页 -->
+
+  <!-- 默认隐藏的导航页 -->
 	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
 		<div class="closed" @click="closeNav">
 			<div class="logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo3710948.png" alt="" title=""></a></div>
@@ -89,14 +65,14 @@
                 </li>
             </div>
         </div>
-	</div>
-</div>
+	  </div>
+  </div>
 </template>
 
 <script>
 import PageBottom from '../components/footer/PageBottom.vue'
 export default {
-  name: 'Case',
+  name: 'Curpartner',
   components: {
     PageBottom
   },
@@ -155,7 +131,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.casePage{
+.partner{
   width: 100%;
   .topnav{
     width: 100%;
@@ -195,81 +171,6 @@ export default {
         -moz-transition: all 0.3s ease-out 0s;
         -o-transition: all 0.3s ease-out 0s;
         transition: all 0.3s ease-out 0s;
-      }
-    }
-  }
-  .cateBtn{
-    width: 100%;
-    height: 1.02rem;
-    border-bottom: 2px solid #ececec;
-    ul{
-      width: 10.7rem;
-      height: 100%;
-      margin: 0 auto;
-      li{
-        float: left;
-        height: 100%;
-        line-height: 1.02rem;
-        height: 1.02rem;
-        font-size: 0.16rem;
-        padding: 0 0.35rem;
-        cursor: pointer;
-        background: url('../assets/cateBg.png') no-repeat right center;
-      }
-      .last{
-        background: none;
-      }
-    }
-  }
-  .caseList{
-    width: 100%;
-    height: 9.9rem;
-    box-sizing: border-box;
-    padding: 0 0.26rem;
-    margin-top: 1.68rem;
-    ul{
-      width: 100%;
-      height: 9.9rem;
-      li{
-        width: 23.22%;
-        height: 4.85rem;
-        float: left;
-        margin-left: 0.15rem;
-        img{
-          width: 4.6rem;
-          height: 3rem;
-        }
-        h4{
-          font-size: 0.24rem;
-          color: #766e6b;
-          margin-top: 0.3rem;
-        }
-        h6{
-          font-size: 0.18rem;
-          color: #9ba9b2;
-          margin-top: 0.15rem;
-        }
-      }
-    }
-  }
-  .page{
-    width: 100%;
-    height: 1.14rem;
-    margin-bottom: 1.5rem;
-    display: block;
-    .el-pagination {
-      white-space: nowrap;
-      padding: 2px 5px;
-      color: #fff;
-      font-weight: 700;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .el-pager{
-        .active{
-          background-color: #3f3f3f;
-        }
       }
     }
   }
@@ -389,6 +290,75 @@ export default {
   .navPageShow{
 		left: 0;
 	}
+  .partnerList{
+    width: 100%;
+    height: auto;
+    table{
+      width: 100%;
+      height: auto;
+      tr{
+        width: 100%;
+        padding: 0 13%;
+        height: 2.7rem;
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+        display: block;
+        text-align: center;
+        vertical-align: middle;
+        td{
+          width: 24.8%;
+          display: inline-block;
+          height: 100%;
+          span{
+            display: inline-block;
+            width: 100%;
+            height: 1.3rem;
+            border-left: 1px solid #eeeeee;
+            border-right: 1px solid #eeeeee;
+            margin-top: 0.7rem;
+          }
+        }
+        td:first-child{
+          span{
+            border-left: none;
+          }
+        }
+        td:last-child{
+          span{
+            border-right: none;
+          }
+        }
+      }
+      tr:first-child{
+        border-top: none;
+      }
+      tr:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .page{
+    width: 100%;
+    height: 1.14rem;
+    margin-top: 1.4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    .el-pagination {
+      white-space: nowrap;
+      padding: 2px 5px;
+      color: #fff;
+      font-weight: 700;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .el-pager{
+        .active{
+          background-color: #3f3f3f;
+        }
+      }
+    }
+  }
 }
 </style>
 <style>
