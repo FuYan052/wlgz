@@ -14,41 +14,38 @@
 		<!-- 右侧固定联系方式 -->
 		<div class="rightFixed">
 			<ul>
-            <li>
-                <img src="/templates/cn/images/right1.png" alt="">
-                <div class="ewm">
-                    <p><img src="http://www.chuangwudao.com/upload/images/20190213/6368564665098437507920334.jpg" title="" alt="" /></p>
-                </div>
-            </li>
-            <!-- <li><a href="http://p.qiao.baidu.com/cps/chat?siteId=9464443&userId=20744346" target="_blank">
-                    <img src="/templates/cn/images/right11.png" alt="">
-                    <h4><img src="/templates/cn/images/right1.png" alt="">在线咨询</h4>
-                </a></li> -->
-            <li><a href="javascript:;" class="r_tel1">
-                    <img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
-                    <h4><img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
-                        <p>15901331708</p>
-                    </h4>
-                </a></li>
-            <li><a href="javascript:;" class="r_tel2">
-                    <img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
-                    <h4><img src="http://www.chuangwudao.com/templates/cn/images/right1.png" alt="">
-                        <p>010-85891412</p>
-                    </h4>
-                </a></li>
-            <li class="last"><a href="javascript:scrollTo('#top',0,300)"><img src="http://www.chuangwudao.com/templates/cn/images/right1.png"
-                        alt=""></a></li>
-        </ul>
+				<li>
+						<img src="../assets/weixinIco.png" alt="">
+						<div class="ewm">
+								<p><img src="../assets/weixinIco.png" title="" alt="" /></p>
+						</div>
+				</li>
+				<li><a href="javascript:;" class="r_tel1">
+								<img src="../assets/qqIco.png" alt="">
+								<h4><img src="../assets/qqIco.png" alt="">
+										<p>15901331708</p>
+								</h4>
+						</a></li>
+				<li><a href="javascript:;" class="r_tel2">
+								<img src="../assets/qqIco.png" alt="">
+								<h4><img src="../assets/qqIco.png" alt="">
+										<p>010-85891412</p>
+								</h4>
+						</a></li>
+				<li class="last" @click="scroll(0,0)"><a href="javascript:;">
+					<img src="../assets/topIco.png"
+										alt=""></a></li>
+			</ul>
 		</div>
 		<!-- 切换导航页面按钮 -->
 		<div class="navBtn" @mouseover="showNav"></div>
     <!-- 左侧导航栏 -->
       <ul class="leftnav">
-        <li data-menuanchor="1" class="active first"><a href="#1" title="创物道">1<span>创物道</span></a></li>
-        <li data-menuanchor="2"><a href="#2" title="案例">2<span>案例</span></a></li>
-        <li data-menuanchor="3"><a href="#3" title="服务">3<span>服务</span></a></li>
-        <li data-menuanchor="4"><a href="#4" title="客户">4<span>客户</span></a></li>
-        <li data-menuanchor="5"><a href="#5" title="联系">5<span>联系</span></a></li>
+        <li data-menuanchor="1" class="first" @click="scroll(0,0)"><a href="javascrip:viod(0)" title="蔚蓝公装">1<span>蔚蓝公装</span></a></li>
+        <li data-menuanchor="2" @click="scroll(0,910)"><a href="javascrip:viod(0)" title="案例">2<span>案例</span></a></li>
+        <li data-menuanchor="3" @click="scroll(0,1840)"><a href="javascrip:viod(0)" title="服务">3<span>服务</span></a></li>
+        <li data-menuanchor="4" @click="scroll(0,2764)"><a href="javascrip:viod(0)" title="客户">4<span>客户</span></a></li>
+        <li data-menuanchor="5" @click="scroll(0,3662)"><a href="javascrip:viod(0)" title="联系">5<span>联系</span></a></li>
     </ul>
     <!-- 手机可见菜单 -->
     <!-- <div class="pz_top visible-xs">
@@ -131,6 +128,10 @@ export default {
 		}
 	},
 	methods: {
+		// 滚动条
+		scroll(x,y){
+			window.scroll(x,y);
+		},
 		// 鼠标滑过按钮显示导航页
 		showNav(){
 			this.isShowNav = true
@@ -186,9 +187,35 @@ export default {
 	.home{
 		width: 100%;
 		position: relative;
+		.pz_top{
+			float: left;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 45px;
+			z-index: 80;
+			-webkit-transition: all 0.3s ease-out 0s;
+			-moz-transition: all 0.3s ease-out 0s;
+			-o-transition: all 0.3s ease-out 0s;
+			transition: all 0.3s ease-out 0s;
+			.top{
+				width: 100%;
+				float: left;
+				height: 26px;
+				padding: 0 60px;
+				.logo {
+					float: left;
+					width: 204px;
+					margin-top: 0px;
+					img{
+						width: 100%;
+    				float: left;
+					}
+				}
+			}
+		}
 		.logo{
 			position: absolute;
-
 			z-index: 99;
 		}
 	}
@@ -279,7 +306,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #299df4;
 						font-weight: bold;
 						i{
 							font-weight: normal;
@@ -327,9 +354,13 @@ export default {
 .rightFixed ul li:nth-child(1){
 	border-top: 0;
 }
+.rightFixed ul li img{
+	float: left;
+}
 .rightFixed ul li a img{
-	float: none;
-	height: 50px;
+	float: left;
+	height: 0.5rem;
+	vertical-align: middle;
 	-webkit-transition: all 0.3s ease-out 0s;
 	-moz-transition: all 0.3s ease-out 0s;
 	-o-transition: all 0.3s ease-out 0s;
@@ -349,7 +380,7 @@ export default {
     opacity: 0;
     z-index: 2;
     letter-spacing: 1px;
-    background: url('http://www.chuangwudao.com/templates/cn/images/right4.jpg') no-repeat center center;
+    background: url('../assets/blueBg.png') no-repeat center center;
     background-size: 100% 100%;
     -webkit-transition: all 0.3s ease-out 0s;
     -moz-transition: all 0.3s ease-out 0s;
@@ -359,7 +390,6 @@ export default {
 .rightFixed ul li h4 img {
     width: 40px;
     max-width: none;
-    margin-left: -10px;
 }
 .rightFixed ul li h4 p {
 	display: inline-block;
@@ -367,8 +397,11 @@ export default {
 
 .rightFixed ul li:hover {
 	overflow: visible;
-	background: url('http://www.chuangwudao.com/templates/cn/images/right4.jpg') no-repeat center center;
+	background: url('../assets/blueBg.png') no-repeat center center;
 	background-size: 100% 100%;
+}
+.rightFixed ul .last:hover {
+	background: none;
 }
 
 .rightFixed ul li:hover h4 {
@@ -410,9 +443,10 @@ export default {
 }
 
 .rightFixed ul li.last img {
-	width: 100%;
+	width: 50%;
 	height: auto;
-	margin-top: 0;
+	margin-top: 0.12rem;
+  margin-left: 0.13rem;
 }
 .navBtn{
 	position: fixed;
@@ -450,7 +484,7 @@ export default {
 	left: 0.35rem;
 	top: 50%;
 	z-index: 9;
-	width: 0.5rem;
+	width: 0.8rem;
 	margin-top: -1.3rem;
 }
 
@@ -517,7 +551,7 @@ export default {
 	display: block;
 	width: 100%;
 	float: left;
-	color: #f11c34;
+	color: #299df4;
 }
 
 .leftnav li:hover a,

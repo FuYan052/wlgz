@@ -7,38 +7,10 @@
                     <div class="middlebox">
                         <div class="tit_1">案例<span>/case</span><h1>c&nbsp;a&nbsp;s&nbsp;e</h1></div>
                             <div class="slick_res1r">
-                                <div>
-                                    <li class="l1">
+                                <div v-for="(item,index) in cate" :key="index">
+                                    <li class="l1" @click="changeCate(item,index)" :class="{currCate:currCateIndex==index}">
                                         <div class="ico"></div>
-                                        <h4>机床设备</h4>
-                                    </li>
-                                </div>
-
-                                <div>
-                                    <li class="l1">
-                                        <div class="ico"></div>
-                                        <h4>医疗器械</h4>
-                                    </li>
-                                </div>
-
-                                <div>
-                                    <li class="l1">
-                                        <div class="ico"></div>
-                                        <h4>智能产品</h4>
-                                    </li>
-                                </div>
-
-                                <div>
-                                    <li class="l1">
-                                        <div class="ico"></div>
-                                        <h4>结构设计</h4>
-                                    </li>
-                                </div>
-
-                                <div>
-                                    <li class="l1">
-                                        <div class="ico"></div>
-                                        <h4>平面设计</h4>
+                                        <h4>{{item}}</h4>
                                     </li>
                                 </div>
                             </div>
@@ -48,44 +20,19 @@
         </div>
         <!-- 中间灰色部分 -->
         <div class="middleBox">
-            <div class="title"><span>机床设备案例</span></div>
+            <div class="title"><span>{{currCateName}}</span></div>
         </div>
         <!-- 右边展示案例 -->
         <div class="rightShowCase">
             <ul>
-                <li class="l1">
+                <li class="l1" v-for="(item,index) in currentList.data" :key="index">
                         <div class="tablebox">
                             <div class="middlebox">
-                                <h5>外观设计 | 结构设计 | 样机制作</h5>
-                                <h3 class="elli">冷弯成型机</h3>
-                                <div class="img"><img src="http://www.chuangwudao.com/upload/images/20181005/18999971.jpg"
-                                        alt="" title=""></div>
-                                <div class="p">
-                                    <p></p>
+                                <h5>{{item.address}}</h5>
+                                <h3 class="elli">{{item.name}}</h3>
+                                <div class="img">
+                                    <img :src="item.img[0].url" alt="" title="">
                                 </div>
-                            </div>
-                        </div>
-                </li>
-                <li class="l2">
-                        <div class="tablebox">
-                            <div class="middlebox">
-                                <h5>外观设计 | 结构设计</h5>
-                                <h3 class="elli">北方兵器研磨机-PZD1000</h3>
-                                <div class="img"><img src="http://www.chuangwudao.com/upload/images/20181005/18999971.jpg"
-                                        alt="" title=""></div>
-                                <div class="p">
-                                    <p></p>
-                                </div>
-                            </div>
-                        </div>
-                </li>
-                <li class="l3">
-                        <div class="tablebox">
-                            <div class="middlebox">
-                                <h5>外观设计 | 结构设计</h5>
-                                <h3 class="elli">防火玻璃生产线</h3>
-                                <div class="img"><img src="http://www.chuangwudao.com/upload/images/20181005/18999971.jpg"
-                                        alt="" title=""></div>
                                 <div class="p">
                                     <p></p>
                                 </div>
@@ -96,10 +43,10 @@
             <!-- 右侧按钮 -->
             <div class="rightBtn">
                 <div class="moreBtn">
-                    <p>
+                    <a href="javascript:void(0)" @click="allCase">
                         <span>全部案例</span>
                         <img src="http://www.chuangwudao.com/templates/cn/images/index1_6.png" alt="">
-                    </p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -108,7 +55,63 @@
 
 <script>
 export default {
-  name: 'HomeCase'
+  name: 'HomeCase',
+  data() {
+      return{
+          cate: ['办公空间','酒店空间','餐饮空间','别墅空间','其他空间'],
+          currCateIndex: 0,
+          officeList: {},
+          hotelList: {},
+          canyinList: {},
+          villaList: {},
+          otherList: {},
+          currentList: {},
+          currCateName: '办公空间'
+      }
+  },
+  created() {
+    this.$http.get('../../static/case.json').then(resp => {
+        console.log(resp)
+        this.officeList = resp.data.case[0]
+        this.villaList = resp.data.case[1]
+        this.canyinList = resp.data.case[2]
+        this.hotelList = resp.data.case[3]
+        this.otherList = resp.data.case[4]
+        this.currentList = this.officeList
+    })
+  },
+  methods: {
+    //   切换分类
+    changeCate(item,index) {
+        this.currCateIndex = index
+        if(item == '办公空间'){
+            this.currCateName = '办公空间'
+            this.currentList = this.officeList
+        }
+        if(item == '酒店空间'){
+            this.currCateName = '酒店空间'
+            this.currentList = this.hotelList
+        }
+        if(item == '餐饮空间'){
+            this.currCateName = '餐饮空间'
+            this.currentList = this.canyinList
+        }
+        if(item == '别墅空间'){
+            this.currCateName = '别墅空间'
+            this.currentList = this.villaList
+        }
+        if(item == '其他空间'){
+            this.currCateName = '其他空间'
+            this.currentList = this.otherList
+        }
+    },
+    // 全部案例按钮
+    allCase() {
+        this.$router.push({
+            path: '/case'
+        })
+    }
+  }
 }
 </script>
 
@@ -185,15 +188,12 @@ export default {
                             position: relative;
                             cursor: pointer;
                             .ico{
-                                width: 13px;
-                                height: 52px;
+                                width: 0.17rem;
+                                height: 0.52rem;
                                 position: absolute;
                                 left: 0;
                                 top: 0;
                                 background: url('http://www.chuangwudao.com/templates/cn/images/index1.png') no-repeat center 150%;
-                            }
-                            .ico:hover{
-                                background-position: center -60%;  //当选中时样式
                             }
                             h4{
                                 width: 100%;
@@ -202,11 +202,30 @@ export default {
                                 color: #666;
                                 line-height: 0.52rem;
                             }
-                            h4:hover{
-                                color: #f21e2f;
+                        }
+                        .l1:hover{
+                            .ico{
+                                background: url('../../assets/caseCir.png') no-repeat center;
                             }
-                            h4:hover{ //选中项的样式
-                                color: #f21e2f;
+                            h4{ 
+                                color: #299df4;
+                                background: #f4f4f6;
+                                padding-left: 0.19rem;
+                                -webkit-transition: all 0.3s ease-out 0s;
+                                -moz-transition: all 0.3s ease-out 0s;
+                                -o-transition: all 0.3s ease-out 0s;
+                                transition: all 0.3s ease-out 0s;
+                            }
+                        }
+                        .currCate{ //选中时样式
+                            .ico{
+                                background: url('../../assets/caseCir.png') no-repeat center;
+                            }
+                            h4{
+                                color: #299df4;
+                            }
+                            h4{ 
+                                color: #299df4;
                                 background: #f4f4f6;
                                 padding-left: 0.19rem;
                                 -webkit-transition: all 0.3s ease-out 0s;
@@ -240,7 +259,7 @@ export default {
                 text-align: center;
                 float: left;
                 padding-top: 0.2rem;
-                background: url('http://www.chuangwudao.com/templates/cn/images/index1_1.jpg') no-repeat center top;
+                background: url('../../assets/blue.png') no-repeat center top;
                 font-size: 0.12rem;
                 color: #888;
                 line-height: 1.5;
@@ -267,12 +286,13 @@ export default {
             height: 100%;
             position: relative;
             border-right: solid 1px #dfdfdf;
+            overflow: hidden;
             li{
                 width: 33.333%;
                 float: left;
                 height: 100%;
                 position: relative;
-                padding: 0 0.3rem;
+                padding: 0 0.2rem;
                 border-left: solid 1px #dfdfdf;
                 text-align: center;
                 .tablebox {
@@ -305,11 +325,18 @@ export default {
                         }
                         .img{
                             width: 100%;
+                            height: 3.07rem;
                             margin-top: 40px;
                             overflow: hidden;
+                            position: relative;
                             img{
-                                width: 100%;
-                                float: left;
+                                width: 88%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                margin: auto;
                                 transition: all 0.6s linear 0.3s;
                                 -moz-transition: all 0.6s linear 0.3s;
                                 -webkit-transition: all 0.6s linear 0.3s;
@@ -337,7 +364,10 @@ export default {
                 .tablebox{
                     .middlebox{
                         h3{
-                            color: #f21e2f;
+                            color: #299df4;
+                        }
+                        .img{
+                            background: #fff;
                         }
                     }
                 }
@@ -353,25 +383,30 @@ export default {
                 left: 0;
                 top: 50%;
                 z-index: 10;
-                p{
+                a{
                     display: block;
                     width: 0.52rem;
                     height: 0.52rem;
-                    background: url('http://www.chuangwudao.com/templates/cn/images/index1_5.jpg');
+                    background: url('../../assets/blueBg.png');
                     background-size: 100% 100%;
                     line-height: 0.52rem;
                     text-align: center;
                     padding: 0;
                     margin: 0;
+                    position: relative;
                     img{
                         vertical-align: middle;
                         display: inline-block;
                         margin-top: -0.02rem;
+                        position: absolute;
+                        top: 35%;
+                        right: 38%;
                     }
                     span{
                         display: inline-block;
                         height: 0.52rem;
                         width: 0;
+                        float: left;
                         overflow: hidden;
                         font-size: 0.15rem;
                         color: white;
@@ -385,7 +420,7 @@ export default {
                         transition: all 0.3s ease-out 0s;
                     }
                 }
-                p:hover{
+                a:hover{
                     cursor: pointer;
                     width: 129px;
                     -webkit-transition: all 0.3s ease-out 0s;
@@ -394,9 +429,15 @@ export default {
                     transition: all 0.3s ease-out 0s;
                     span{
                         width: 78px;
-	                    text-align: left;
+	                    text-align: center;
                         padding: 0;
                         margin: 0;
+                        float: left;
+                        padding-left: 0.2rem;
+                    }
+                    img{
+                        top: 35%;
+                        right: 15%;
                     }
                 }
             }

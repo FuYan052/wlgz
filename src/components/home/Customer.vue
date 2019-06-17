@@ -387,7 +387,7 @@ export default {
             float: left;
             height: 3.44rem;
             text-align: center;
-            padding: 0.3rem 8.89% 0.36rem 8.89%;
+            padding: 0 8.89% 0 8.89%;
             border-right: solid 0.01rem #e2e2e2;
             border-bottom: solid 0.01rem #e2e2e2;
             background: url('http://www.chuangwudao.com/upload/images/20180928/index3_13693292.jpg') no-repeat center center;
@@ -428,8 +428,8 @@ export default {
             .number_b{
               width: 100%;
               float: left;
-              margin-top: 0.34rem;
-              padding-top: 0.28rem;
+              margin-top: 0.2rem;
+              padding-top: 0.2rem;
               border-top: solid 0.01rem white;
               border-top: solid 0.01rem rgba(255, 255, 255, 0.1);
               .l2{

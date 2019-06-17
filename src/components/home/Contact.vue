@@ -18,7 +18,6 @@
               >
                 <el-carousel-item v-for="item in 2" :key="item">
                     <ul class="ul_1">
-
                         <li class="l1">
                             <div class="zbox"><span>
                                     <div class="ico"><img
@@ -31,7 +30,6 @@
                                 </span>
                             </div>
                         </li>
-
                         <li class="l2">
                             <div class="zbox"><span>
                                     <div class="ico"><img
@@ -44,7 +42,6 @@
                                 </span>
                             </div>
                         </li>
-
                         <li class="l3">
                             <div class="zbox"><span>
                                     <div class="ico"><img
@@ -57,7 +54,6 @@
                                 </span>
                             </div>
                         </li>
-
                         <li class="l4">
                             <div class="zbox"><span>
                                     <div class="ico"><img
@@ -70,38 +66,12 @@
                                 </span>
                             </div>
                         </li>
-
                     </ul>
                 </el-carousel-item>
               </el-carousel>
             </div>
           </div>
         </div>
-        <!-- <div class="tab">
-          <div class="homedown">
-            <div>
-              <div class="zbox">
-                <div class="ico"></div>
-                <h4>北京</h4>
-              </div>
-            </div>
-
-            <div>
-              <div class="zbox">
-                <div class="ico"></div>
-                <h4>廊坊</h4>
-              </div>
-            </div>
-
-            <div>
-              <div class="zbox">
-                <div class="ico"></div>
-                <h4>宁波</h4>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
       </div>
     </div>
     <!-- 网页脚部 -->
@@ -288,19 +258,29 @@ export default {
 .row_1 .hometop .el-carousel__container{
     position: relative;
 } */
-.hometop .el-carousel__arrow--left{
-    position: absolute;
-    /* left: -53px; */
-    top: 50%;
-    display: block;
-    width: 23px;
-    height: 42px;
-    margin-top: -21px;
-    background: url('http://www.chuangwudao.com/templates/cn/images/index4_6.png') no-repeat left center;
-    background-size: auto 100%;
-    opacity: 0.1;
-    filter: alpha(opacity=10);
-    font-size: 0;
+.hometop .el-carousel__arrow{
+  display: none !important;
+}
+.hometop .el-carousel .el-carousel__indicators{
+  width: 100%;
+  float: left;
+  margin-top: 32px;
+  position: static;
+  text-align: center;
+}
+.hometop .el-carousel .el-carousel__indicators .el-carousel__indicator{
+  width: 1.62rem;
+  display: block;
+}
+.hometop .el-carousel .el-carousel__indicators::before{
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #3a3945;
+  position: absolute;
+  left: 0;
+  top: 340px;
+  z-index: 2;
 }
 </style>
 

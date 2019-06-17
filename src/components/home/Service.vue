@@ -30,7 +30,6 @@
         <div class="tablebox">
             <div class="middlebox">
               <div class="slick_res2r">
-
                   <div>
                       <li class="l1">
                           <div class="zbox">
@@ -235,7 +234,7 @@ export default {
                     height: 0.46rem;
                     line-height: 0.46rem;
                     text-align: center;
-                    background: url('http://www.chuangwudao.com/templates/cn/images/index1_5.jpg') no-repeat center center;
+                    background: url('../../assets/blueBg.png') no-repeat center center;
                     background-size: cover;
                     font-size: 0.1rem;
                     font-family: Arial;
