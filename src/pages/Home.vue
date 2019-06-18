@@ -20,9 +20,9 @@
 								<p><img src="../assets/weixinIco.png" title="" alt="" /></p>
 						</div>
 				</li>
-				<li><a href="javascript:;" class="r_tel1">
-								<img src="../assets/qqIco.png" alt="">
-								<h4><img src="../assets/qqIco.png" alt="">
+				<li class="smile"><a href="javascript:;" class="r_tel1">
+								<img src="../assets/smile.png" alt="">
+								<h4><img src="../assets/smile.png" alt="">
 										<p>15901331708</p>
 								</h4>
 						</a></li>
@@ -76,7 +76,7 @@
 	<!-- 默认隐藏的导航页 -->
 	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
 		<div class="closed" @click="closeNav">
-			<div class="logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo3710948.png" alt="" title=""></a></div>
+			<div class="logo"><a href="/" title=""><img src="../assets/logo.png" alt="" title=""></a></div>
 			<div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
 		</div>
 		<div id="navSlide" class="ph_menu">
@@ -387,10 +387,6 @@ export default {
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
 }
-.rightFixed ul li h4 img {
-    width: 40px;
-    max-width: none;
-}
 .rightFixed ul li h4 p {
 	display: inline-block;
 }
@@ -416,7 +412,7 @@ export default {
 	width: 121px;
 	text-align: center;
 	height: 112px;
-	background: url('http://www.chuangwudao.com/templates/cn/images/right6.png') no-repeat center center;
+	background: url('../assets/right6.png') no-repeat center center;
 	opacity: 0;
 	z-index: 1;
 	padding: 10px 18px 10px 10px;
@@ -425,7 +421,6 @@ export default {
 	-o-transition: all 0.3s ease-out 0s;
 	transition: all 0.3s ease-out 0s;
 }
-
 .rightFixed ul li .ewm img {
 	width: 100%;
 	float: left;
@@ -441,7 +436,16 @@ export default {
 	right: 110%;
 	opacity: 1;
 }
-
+.rightFixed ul li.smile img {
+	width: 50%;
+	height: auto;
+	margin-top: 0.12rem;
+  margin-left: 0.13rem;
+}
+.rightFixed ul li h4 img {
+    width: 0.45rem !important;
+    max-width: none;
+}
 .rightFixed ul li.last img {
 	width: 50%;
 	height: auto;

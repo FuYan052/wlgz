@@ -61,7 +61,7 @@
     <!-- 默认隐藏的导航页 -->
     <div class="navPage" :class="isShowNav? 'navPageShow' : ''">
       <div class="closed" @click="closeNav">
-        <div class="logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo3710948.png" alt="" title=""></a></div>
+        <div class="logo"><a href="/" title=""><img src="../assets/logo.png" alt="" title=""></a></div>
         <div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
       </div>
       <div id="navSlide" class="ph_menu">

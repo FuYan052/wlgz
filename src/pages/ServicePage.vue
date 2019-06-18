@@ -7,7 +7,7 @@
     <!-- banner图 -->
     <div class="topBanner">
       <img src="../assets/serviceTop.png" alt="">
-    </div>
+    </div>   
     <!-- 标题 -->
     <div class="title1">
       <span>New&nbsp;&nbsp;and&nbsp;&nbsp;Trends</span>
@@ -20,11 +20,21 @@
       to be realizedwon't be blind at least.
     </div>
     <div class="wrap1">
-      <div :id="'anchor-'+index" class="item" v-for="index in 4" :key="index">
-        {{index}}
+      <div  class="item" v-for="index in 4" :key="index" @click="changeCurrent(index)" :class="{currActive1:activeIndex==index}">
+        <div class="img"></div>
+        <div class="blue">
+          <p class="p p1">契合企业灵魂</p>
+          <p class="p p2">Safety system</p>
+          <p class="p p3">网页是构成网站的基本元素是必<br />虚的法人网页是构成的基本元素是必<br />某个角落
+        </p>
+        </div>
       </div>
       <div class="btn">
-        <a href="javascript:void(0)" @click="goAnchor('#anchor-'+index)" v-for="index in 4" :key="index"> {{index}} </a>
+        <div class="cirBox">
+          <!-- <a href="javascript:void(0)" @click="changeCurrent(index)" v-for="index in 4" :key="index" :class="{currActive:activeIndex==index}"> -->
+          <div @click="changeCurrent(index)" v-for="index in 4" :key="index" :class="{currActive2:activeIndex==index}"></div>
+        <!-- </a> -->
+        </div>
       </div>
     </div>
     <div class="sectBox">
@@ -137,7 +147,7 @@
     <!-- 默认隐藏的导航页 -->
     <div class="navPage" :class="isShowNav? 'navPageShow' : ''">
       <div class="closed" @click="closeNav">
-        <div class="logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo3710948.png" alt="" title=""></a></div>
+        <div class="logo"><a href="/" title=""><img src="../assets/logo.png" alt="" title=""></a></div>
         <div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
       </div>
       <div id="navSlide" class="ph_menu">
@@ -177,7 +187,8 @@ export default {
   },
   data() {
     return {
-      isShowNav: false
+      isShowNav: false,
+      activeIndex: 1
     }
   },
   methods:{
@@ -229,6 +240,10 @@ export default {
       console.log(selector)
       var anchor = this.$el.querySelector(selector)
       document.documentElement.scrollTop = anchor.offsetTop
+    },
+    changeCurrent(index) {
+      console.log(index)
+      this.activeIndex = index
     }
   }
 }
@@ -318,19 +333,97 @@ export default {
     width: 71.77%;
     height: 6.85rem;
     margin: 0 auto;
-    border: 1px solid red;
+    position: relative;
     .item{
       width: 25%;
       height: 5rem;
       font-size: 0.18rem;
-      border: 1px solid paleturquoise;
       float: left;
+      cursor: pointer;
+      .img{
+        width: 1.73rem;
+        height: 1.73rem;
+        margin: 0.65rem auto;
+        background: url('../assets/5.png') no-repeat center;
+      }
+      .blue{
+        width: 100%;
+        height: 1.9rem;
+        margin-top: -0.17rem;
+        box-sizing: content-box;
+        padding-top: 0.2rem;
+        position: relative;
+        .p{
+          text-align: center;
+        }
+        .p1{
+          font-size: 0.18rem;
+          color: #383838;
+        }
+        .p2{
+          font-size: 0.12rem;
+          color: #383838;
+          margin-top: 0.1rem;
+        }
+        .p3{
+          width: 70%;
+          font-size: 0.14rem;
+          color: #888888;
+          line-height: 0.27rem;
+          margin: 0 auto;
+          margin-top: 0.15rem;
+        }
+      }
+    }
+    .blue::before{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 0.11rem;
+      position: absolute;
+      left: 0;
+      top: -0.1rem;
     }
     .btn{
       width: 100%;
       height: 1.85rem;
-      a{
-        font-size: 0.16rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      .cirBox{
+        width: 1.8rem;
+        height: 0.16rem;
+        margin: 0 auto;
+        margin-top: 1.2rem;
+        div{
+          width: 0.16rem;
+          height: 0.16rem;
+          float: left;
+          border-radius: 50%;
+          background: #d3d3d3;
+          margin: 0 0.1rem;
+          cursor: pointer;
+        }
+        .currActive2{
+          width: 0.5rem;
+          border-radius: 0.5rem;
+          background: #127ff4;
+        }
+      }
+      
+    }
+    .currActive1{
+      .img{
+        background: url('../assets/7.png') no-repeat center;
+      }
+      .blue{
+        background: #0f79e7;
+        .p{
+          color: #fff;
+        }
+      }
+      .blue::before{
+        background: url('../assets/ser_tri.png') no-repeat center;
       }
     }
   }

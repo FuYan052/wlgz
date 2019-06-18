@@ -32,12 +32,18 @@
       <div class="right">
         <div class="navWrap">
           <ul>
-            <li>首页</li>
-            <li>案例</li>
+            <li 
+            v-for="(item,index) in list" 
+            :key="index" 
+            @click="toPage(item,index)"
+            >
+              {{item.name}}
+            </li>
+            <!-- <li>案例</li>
             <li>服务</li>
             <li>客户</li>
             <li>新闻</li>
-            <li>我们</li>
+            <li>我们</li> -->
           </ul>
         </div>
         <div class="rightBottom">
@@ -62,7 +68,49 @@
 
 <script>
 export default {
-  name: 'PageBottom'
+  name: 'PageBottom',
+  data() {
+    return{
+      list: [],
+    }
+  },
+  created() {
+    this.list = [
+      {
+        name:'首页',
+        path: '/home'
+      },
+      {
+        name:'案例',
+        path: '/case'
+      },
+      {
+        name:'服务',
+        path: '/service'
+      },
+      {
+        name:'客户',
+        path: '/curpartner'
+      },
+      {
+        name:'新闻',
+        path: '/news'
+      },
+      {
+        name:'我们',
+        path: '/about'
+      },
+    ]
+  },
+  methods: {
+    toPage(item,index) {
+      console.log(item)
+      this.$router.push({
+        path: item.path,
+      })
+      window.scroll(0,0)
+    }
+  }
 }
 </script>
 
@@ -130,6 +178,8 @@ export default {
             color: #9a9a9a;
             font-size: 0.18rem;
             float: left;
+            height: 0.3rem;
+            line-height: 0.3rem;
             margin-top: 0.5rem;
             cursor: pointer;
           }

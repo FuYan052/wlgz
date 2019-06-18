@@ -11,14 +11,16 @@
                   <div>
                       <div class="zbox">
                           <div class="img">
-                            <img src="../../assets/s-big.png" alt="" title=""></div>
+                            <!-- <img :src="currServiceDetail.img" alt="" title=""> -->
+                            <img src="../../assets/s-big.png" alt="">
+                          </div>
                           <div class="text">
-                              <h4>设计研究</h4>
-                              <h6>Design Research</h6>
+                              <h4>{{currServiceDetail.title}}</h4>
+                              <h6>{{currServiceDetail.title2}}</h6>
                               <div class="p">
-                                  设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。
+                                {{currServiceDetail.detail}}
                               </div>
-                              <div class="detail"><a href="javascript:void(0);" title="">more</a></div>
+                              <div class="detail"><a href="javascript:void(0);" title="" @click="more">more</a></div>
                           </div>
                       </div>
                   </div>
@@ -30,57 +32,12 @@
         <div class="tablebox">
             <div class="middlebox">
               <div class="slick_res2r">
-                  <div>
-                      <li class="l1">
+                  <div v-for="(item,index) in serviceList" :key="index">
+                      <li class="l1" @click="changeService(item,index)" :class="{currService:currServiceIndex==index}">
                           <div class="zbox">
-                              <div class="ico"><img src="../../assets/s1.png"
-                                      alt="设计研究" title="设计研究"></div>
-                              <h4>设计研究</h4>
-                              <h5>Design Research</h5>
-                          </div>
-                      </li>
-                  </div>
-
-                  <div>
-                      <li class="l2">
-                          <div class="zbox">
-                              <div class="ico"><img src="../../assets/s2.png"
-                                      alt="外观设计" title="外观设计"></div>
-                              <h4>外观设计</h4>
-                              <h5>Appearance design</h5>
-                          </div>
-                      </li>
-                  </div>
-
-                  <div>
-                      <li class="l3">
-                          <div class="zbox">
-                              <div class="ico"><img src="../../assets/s1.png"
-                                      alt="结构设计" title="结构设计"></div>
-                              <h4>结构设计</h4>
-                              <h5>Structural design</h5>
-                          </div>
-                      </li>
-                  </div>
-
-                  <div>
-                      <li class="l4">
-                          <div class="zbox">
-                              <div class="ico"><img src="../../assets/s3.png"
-                                      alt="自动化设计" title="自动化设计"></div>
-                              <h4>自动化设计</h4>
-                              <h5>Automation design</h5>
-                          </div>
-                      </li>
-                  </div>
-
-                  <div>
-                      <li class="l4">
-                          <div class="zbox">
-                              <div class="ico"><img src="../../assets/s3.png"
-                                      alt="自动化设计" title="自动化设计"></div>
-                              <h4>自动化设计</h4>
-                              <h5>Automation design</h5>
+                              <div class="ico"><img :src="item.ico"></div>
+                              <h4>{{item.title}}</h4>
+                              <h5>{{item.title2}}</h5>
                           </div>
                       </li>
                   </div>
@@ -94,7 +51,33 @@
 
 <script>
 export default {
-  name: 'Service'
+  name: 'Service',
+  data() {
+    return{
+      serviceList: [],
+      currServiceIndex: 0,
+      currServiceDetail: {}
+    }
+  },
+  created() {
+    this.$http.get('../../static/case.json').then(resp => {
+      console.log(resp)
+      this.serviceList = resp.data.service
+      this.currServiceDetail = this.serviceList[0]
+
+    })
+  },
+  methods:{
+    changeService(item,index) {
+      this.currServiceIndex = index
+      this.currServiceDetail = this.serviceList[index]
+    },
+    more() {
+      this.$router.push({
+        path: '/service'
+      })
+    }
+  }
 }
 </script>
 
@@ -312,7 +295,7 @@ export default {
                 h5{
                   width: 100%;
                   float: left;
-                  font-size: 0.12rm;
+                  font-size: 0.12rem;
                   color: white;
                   line-height: 0.3rem;
                   letter-spacing: 0.01rem;
@@ -320,7 +303,7 @@ export default {
                 }
               }
             }
-            li:hover{   //选择项样式
+            .currService{   //选择项样式
               background: #191822;
             }
           }

@@ -4,61 +4,43 @@
       <div class="middlebox">
         <div class="tit_1">客户<span>/customer</span>
             <h1>C&nbsp;u&nbsp;s&nbsp;t&nbsp;o&nbsp;m&nbsp;e&nbsp;r</h1>
-            <div class="more"><a href="/list/5/" title="">查看更多+</a></div>
+            <div class="more"><a href="javascript:void(0)" title="" @click="toMore">查看更多+</a></div>
         </div>
         <div class="dl">
             <div class="dd d0">
 
                 <li class="l1">
-                    <a href="/list/11/148.htm" target="_blank" title="济南力建">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg"
-                                alt="济南力建" title="济南力建"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="济南力建"
-                                title="济南力建"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo15.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/187.htm" target="_blank" title="小型雕刻机">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="小型雕刻机"
-                                title="小型雕刻机"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="小型雕刻机"
-                                title="小型雕刻机"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo14.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/174.htm" target="_blank" title="北方天宇">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="北方天宇"
-                                title="北方天宇"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="北方天宇"
-                                title="北方天宇"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo13.jpg"></div>
                     </a>
                 </li>
                 <li class="l1">
-                    <a href="/list/11/148.htm" target="_blank" title="济南力建">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg"
-                                alt="济南力建" title="济南力建"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="济南力建"
-                                title="济南力建"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo12.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/187.htm" target="_blank" title="小型雕刻机">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="小型雕刻机"
-                                title="小型雕刻机"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="小型雕刻机"
-                                title="小型雕刻机"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo11.jpg" alt="小型雕刻机"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/174.htm" target="_blank" title="北方天宇">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="北方天宇"
-                                title="北方天宇"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="北方天宇"
-                                title="北方天宇"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo10.jpg" alt="北方天宇"></div>
                     </a>
                 </li>
 
@@ -66,12 +48,6 @@
             
             <div class="dd d1">
                 <div class="number counters">
-                    <!-- <style>
-                        .section_4 .c_1570_1 .dl .dd.d1 .number {
-                            background: url(/upload/images/20180928/index3_13693292.jpg) no-repeat center center;
-                            background-size: cover;
-                        }
-                    </style> -->
                     <div class="number_t">
 
                         <li class="l2">
@@ -106,29 +82,20 @@
                 </div>
 
                 <li class="l1">
-                    <a href="/list/11/148.htm" target="_blank" title="济南力建">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg"
-                                alt="济南力建" title="济南力建"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="济南力建"
-                                title="济南力建"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo1.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/187.htm" target="_blank" title="小型雕刻机">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="小型雕刻机"
-                                title="小型雕刻机"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="小型雕刻机"
-                                title="小型雕刻机"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo2.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/174.htm" target="_blank" title="北方天宇">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="北方天宇"
-                                title="北方天宇"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="北方天宇"
-                                title="北方天宇"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo3.jpg"></div>
                     </a>
                 </li>
 
@@ -136,56 +103,38 @@
             <div class="dd d0">
 
                 <li class="l1">
-                    <a href="/list/11/183.htm" target="_blank" title="奇威特">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="奇威特"
-                                title="奇威特"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="奇威特"
-                                title="奇威特"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo4.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/17/228.htm" target="_blank" title="信丰县教师">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="信丰县教师"
-                                title="信丰县教师"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="信丰县教师"
-                                title="信丰县教师"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo5.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/11/178.htm" target="_blank" title="高机">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="高机"
-                                title="高机"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="高机"
-                                title="高机"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo6.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/12/217.htm" target="_blank" title="医用3D打印机">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="医用3D打印机"
-                                title="医用3D打印机"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="医用3D打印机"
-                                title="医用3D打印机"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo7.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/12/204.htm" target="_blank" title="瑞多思">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="瑞多思"
-                                title="瑞多思"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="瑞多思"
-                                title="瑞多思"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo8.jpg"></div>
                     </a>
                 </li>
 
                 <li class="l1">
-                    <a href="/list/15/232.htm" target="_blank" title="尚好捷电动车">
-                        <div class="logo"><img src="http://www.chuangwudao.com/upload/images/20181025/18426734.jpg" alt="尚好捷电动车"
-                                title="尚好捷电动车"></div>
-                        <div class="page"><img src="http://www.chuangwudao.com/upload/images/20181025/25581498.jpg" alt="尚好捷电动车"
-                                title="尚好捷电动车"></div>
+                    <a href="javascript: void(0)">
+                      <div class="logo"><img src="../../assets/logo9.jpg"></div>
                     </a>
                 </li>
 
@@ -198,7 +147,14 @@
 
 <script>
 export default {
-  name: 'Custormer'
+  name: 'Custormer',
+  methods: {
+    toMore() {
+      this.$router.push({
+        path: '/curpartner  '
+      })
+    }
+  }
 }
 </script>
 
@@ -258,14 +214,14 @@ export default {
             float: left;
             display: block;
             padding-left: 0.13rem;
-            background: url('http://www.chuangwudao.com/templates/cn/images/index3_13.jpg') no-repeat left center;
+            background: url('../../assets/s-moreBg.png') no-repeat left center;
             line-height: 0.26rem;
             font-size: 0.14rem;
             color: #888;
             font-weight: normal;
           }
           a:hover{
-            color: #fd2c07;
+            color: #299df4;
           }
         }
       }
@@ -309,31 +265,7 @@ export default {
                 z-index: 2;
                 img{
                   float: left;
-                  width: 2.24rem;
-                  height: 1.7rem;
-                  position: absolute;
-                  left: 50%;
-                  top: 50%;
-                  max-width: none;
-                  margin: -0.85rem 0 0 -1.12rem;
-                }
-              }
-              .page{
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                z-index: 2;
-                z-index: 1;
-	              opacity: 0;
-                img{
-                  width: 2.24rem;
-                  height: 1.7rem;
-                  position: absolute;
-                  left: 50%;
-                  top: 50%;
-                  max-width: none;
-                  margin: -0.85rem 0 0 -1.12rem;
-                  transform: rotateY(-180deg);
+                  width: 100%;
                 }
               }
             }
@@ -353,26 +285,17 @@ export default {
             right: 0;
             top: 0;
             a{
-              transform: rotateY(180deg);
-              -webkit-transition: all 0.8s ease-out 0s;
-              -moz-transition: all 0.8s ease-out 0s;
-              -o-transition: all 0.8s ease-out 0s;
-              transition: all 0.8s ease-out 0s;
-              .page{
-                z-index: 2;
-              	opacity: 1;
-                -webkit-transition: all 0.8s ease-out 0s;
-                -moz-transition: all 0.8s ease-out 0s;
-                -o-transition: all 0.8s ease-out 0s;
-                transition: all 0.8s ease-out 0s;
-              }
+              // transform: rotateY(180deg);
+              // -webkit-transition: all 0.8s ease-out 0s;
+              // -moz-transition: all 0.8s ease-out 0s;
+              // -o-transition: all 0.8s ease-out 0s;
+              // transition: all 0.8s ease-out 0s;
               .logo{
-                z-index: 1;
-	              opacity: 0;
-                -webkit-transition: all 0.8s ease-out 0s;
-                -moz-transition: all 0.8s ease-out 0s;
-                -o-transition: all 0.8s ease-out 0s;
-                transition: all 0.8s ease-out 0s;
+                transform: scale(1.2);
+                -ms-transform: scale(1.2);
+                -webkit-transform: scale(1.2);
+                -o-transform: scale(1.2);
+                -moz-transform: scale(1.2);
               }
             }
           }

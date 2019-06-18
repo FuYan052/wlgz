@@ -71,7 +71,7 @@ export default {
   },
   created() {
     this.$http.get('../../static/case.json').then(resp => {
-        console.log(resp)
+        // console.log(resp)
         this.officeList = resp.data.case[0]
         this.villaList = resp.data.case[1]
         this.canyinList = resp.data.case[2]

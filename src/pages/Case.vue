@@ -2,7 +2,7 @@
   <div class="casePage">
     <div class="topnav">
       <div class="top">
-        <div class="case-logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo25606209.jpg"></a></div>
+        <div class="case-logo"><a href="/" title=""><img src="../assets/logo.png"></a></div>
         <!-- 导航切换按钮 -->
         <div class="navBtn" @mouseover="showNav"></div>
       </div>
@@ -16,36 +16,18 @@
   <!-- 分类按钮 -->
   <div class="cateBtn">
     <ul>
-      <li>
-        全部
-      </li>
-      <li>
-        办公空间
-      </li>
-      <li>
-        餐饮空间设计
-      </li>
-      <li>
-        酒店会所设计
-      </li>
-      <li>
-        住宅空间设计
-      </li>
-      <li>
-        住宅空间设计
-      </li>
-      <li class="last">
-        其它
+      <li v-for="(item,index) in navList" :key="index" :class="{currNav:currNavIndex==index}" @click="changeNav(item,index)">
+        {{item}}
       </li>
     </ul>
   </div>
   <!-- 案例列表 -->
   <div class="caseList">
     <ul>
-      <li v-for="item in 7" :key="item">
-        <img src="../assets/casePic.png" alt="">
-        <h4>艺廊及商店改造</h4>
-        <h6>办公空间设计</h6>
+      <li v-for="(item,index) in currentCaseList" :key="index">
+        <img :src="item.img[0].url" alt="">
+        <h4>{{item.name}}</h4>
+        <h6>{{item.address}}</h6>
       </li>
     </ul>
   </div>
@@ -54,7 +36,9 @@
     <el-pagination
       background
       layout="prev, pager, next"
-      :total="7">
+      @current-change="pageChange"
+      :page-size="8"
+      :total="total">
     </el-pagination>
   </div>
   <!-- 网页脚部 -->
@@ -62,7 +46,7 @@
 <!-- 默认隐藏的导航页 -->
 	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
 		<div class="closed" @click="closeNav">
-			<div class="logo"><a href="/" title=""><img src="http://www.chuangwudao.com/upload/images/20180928/logo3710948.png" alt="" title=""></a></div>
+			<div class="logo"><a href="/" title=""><img src="../assets/logo.png" alt="" title=""></a></div>
 			<div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
 		</div>
 		<div id="navSlide" class="ph_menu">
@@ -102,10 +86,78 @@ export default {
   },
   data() {
 		return{
-			isShowNav: false
+      isShowNav: false,
+      navList: ['全部','餐饮空间设计','办公空间设计','酒店会所设计','住宅空间设计','其他'],
+      currNavIndex: 0,
+      current: 1,
+      pageSize: 8,
+      total: null,
+      allList: [],
+      _officeList: {},
+      _hotelList: {},
+      _canyinList: {},
+      _villaList: {},
+      _otherList: {},
+      currList: '', //分页前的list
+      currentCaseList: '',//做过分页截取后的数组,用作渲染
 		}
-	},
+  },
+  created() {
+    this.$http.get('../../static/case.json').then(resp => {
+      console.log(resp)
+      this._officeList = resp.data.case[0]
+      this._villaList = resp.data.case[1]
+      this._canyinList = resp.data.case[2]
+      this._hotelList = resp.data.case[3]
+      this._otherList = resp.data.case[4]
+      this.allList.push(...this._officeList.data)
+      this.allList.push(...this._villaList.data)
+      this.allList.push(...this._canyinList.data)
+      this.allList.push(...this._hotelList.data)
+      this.allList.push(...this._otherList.data)
+      this.currList = this.allList
+      // 第一次进入是当前页数据列表
+      this.currentCaseList = this.currList.slice(0, 8)
+      this.total = this.currList.length
+    })
+  },
 	methods: {
+    // 点击页码
+    pageChange(pageNumber){
+      this.current = pageNumber;  // 当前页改变
+      // 当前页起始下标及结束下标
+      const start = (this.current - 1) * this.pageSize;
+      const end = start + this.pageSize;
+      // 当前页数据列表
+      this.currentCaseList = this.currList.slice(start, end)
+    },
+    // 切换分类
+    changeNav(item,index) {
+      this.currNavIndex = index
+      console.log(item)
+      if(item == '全部'){
+          this.currList = this.allList
+      }
+      if(item == '办公空间设计'){
+          this.currList = this._officeList.data
+      }
+      if(item == '酒店会所设计'){
+          this.currList = this._hotelList.data
+      }
+      if(item == '餐饮空间设计'){
+          this.currList = this._canyinList.data
+      }
+      if(item == '住宅空间设计'){
+          this.currList = this._villaList.data
+      }
+      if(item == '其他'){
+        console.log("6")
+          this.currList = this._otherList.data
+      }
+      console.log(this.currList)
+      this.currentCaseList = this.currList.slice(0, 8)
+      this.total = this.currList.length
+    },
 		// 鼠标滑过按钮显示导航页
 		showNav(){
 			this.isShowNav = true
@@ -203,7 +255,7 @@ export default {
     height: 1.02rem;
     border-bottom: 2px solid #ececec;
     ul{
-      width: 10.7rem;
+      width: 8.7rem;
       height: 100%;
       margin: 0 auto;
       li{
@@ -213,27 +265,32 @@ export default {
         height: 1.02rem;
         font-size: 0.16rem;
         padding: 0 0.35rem;
+        color: #777777;
         cursor: pointer;
         background: url('../assets/cateBg.png') no-repeat right center;
       }
-      .last{
+      li:nth-last-child(1){
         background: none;
+      }
+      .currNav{
+        color: #373737;
       }
     }
   }
   .caseList{
     width: 100%;
-    height: 9.9rem;
+    height: auto;
     box-sizing: border-box;
     padding: 0 0.26rem;
     margin-top: 1.68rem;
     ul{
       width: 100%;
-      height: 9.9rem;
+      height: auto;
       li{
         width: 23.22%;
         height: 4.85rem;
-        float: left;
+        display: inline-block;
+        vertical-align: text-top;
         margin-left: 0.15rem;
         img{
           width: 4.6rem;
