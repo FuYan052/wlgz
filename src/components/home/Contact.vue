@@ -370,6 +370,7 @@ export default {
         position: absolute;
         top: 48%;
         left: 6.5%;
+        opacity: 0.1;
       }
       .next{
         width: 0.34rem;
@@ -380,6 +381,7 @@ export default {
         position: absolute;
         top: 48%;
         right: 6.5%;
+        opacity: 0.1;
       }
     }
   }

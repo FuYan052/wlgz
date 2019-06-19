@@ -151,7 +151,7 @@ export default {
   methods: {
     toMore() {
       this.$router.push({
-        path: '/curpartner  '
+        path: '/curpartner'
       })
     }
   }
@@ -266,6 +266,12 @@ export default {
                 img{
                   float: left;
                   width: 100%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  margin: auto;
                 }
               }
             }
@@ -397,168 +403,73 @@ export default {
 }
 </style>
 <style>
-@media screen and (max-width:1630px) {
-	.customer .contentWrap .dl .dd.d1 .number {
-		padding: 30px 5% 36px 5%;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_b {
-		margin-top: 24px;
-		padding-top: 20px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_t .l2 h3 b {
-		font-size: 70px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_b .l2 h3 b {
-		font-size: 40px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_t .l2 h5,
-	.customer .contentWrap .dl .dd.d1 .number .number_b .l2 h5 {
-		font-size: 14px;
-		line-height: 22px;
-	}
+@media screen and (max-width: 1360px){
+  .customer .contentWrap .middlebox .dl .dd.d1 .number{
+    width: 100%;
+    float: left;
+    height: 3.44rem;
+    text-align: center;
+    padding: 0 !important;
+  }
 }
-
-@media screen and (max-width:1500px) {
-	.customer .contentWrap .dl .dd .l1 a {
-		height: 140px;
-	}
-
-	.customer .contentWrap .dl .dd .l1 a .logo img,
-	.customer .contentWrap .dl .dd .l1 a .page img {
-		width: 184px;
-		height: 140px;
-		margin: -70px 0 0 -92px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number {
-		padding: 20px 5% 26px 5%;
-		height: 282px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_b {
-		margin-top: 14px;
-		padding-top: 10px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_t .l2 h3 {
-		font-size: 20px;
-		line-height: 66px;
-	}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_t .l2 h3{
+    width: 100%;
+    float: left;
+    font-size: 0.2rem !important;
+    color: #019ee5;
+    line-height: 0.86rem;
+    font-family: 'OPENSANS-BOLD';
 }
-
-@media screen and (max-width:1360px) {
-	.customer .contentWrap .dl .dd .l1 a {
-		height: 100px;
-	}
-
-	.customer .contentWrap .dl .dd .l1 a .logo img,
-	.customer .contentWrap .dl .dd .l1 a .page img {
-		width: 132px;
-		height: 100px;
-		margin: -50px 0 0 -66px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number {
-		padding: 20px 5% 16px 5%;
-		height: 202px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_b {
-		margin-top: 16px;
-		padding-top: 8px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_t .l2 h3 b {
-		font-size: 50px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_b .l2 h3 b {
-		font-size: 20px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_t .l2 h3 {
-		font-size: 16px;
-		line-height: 46px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_t .l2 h5,
-	.customer .contentWrap .dl .dd.d1 .number .number_b .l2 h5 {
-		font-size: 12px;
-		line-height: 18px;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .number .number_b .l2 h3 {
-		font-size: 14px;
-		line-height: 34px;
-	}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_t .l2 h3 b{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.58rem !important;
+    font-family: Arial;
+    font-weight: bold;
+    margin-right: 0.05rem;
 }
-
-@media screen and (max-width:991px) {
-
-	.customer .contentWrap .dl .dd,
-	.customer .contentWrap .dl .dd.d1 {
-		width: 100%;
-	}
-
-	.customer .contentWrap .dl .dd .l1 {
-		width: 33.333%;
-		background: white;
-	}
-
-	.customer .contentWrap .dl .dd.d1 .l1 {
-		display: none;
-	}
-
-	.customer .contentWrap .dl {
-		margin-top: 23px;
-	}
-
-	.tit_1 .more {
-		margin-top: 10px;
-		height: 22px;
-	}
-
-	.tit_1 .more a {
-		padding-left: 9px;
-		line-height: 22px;
-		font-size: 12px;
-	}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_t .l2 h5{
+    width: 100%;
+    float: left;
+    margin-top: 0.06rem;
+    font-size: 0.14rem !important;
+    color: #fff;
+    line-height: 0.24rem;
+    opacity: 0.8;
 }
-
-@media screen and (max-width:767px) {
-	.customer .contentWrap {
-		padding-right: 10px;
-	}
-
-	.customer .contentWrap .dl {
-		margin-top: 13px;
-	}
-
-	.customer .contentWrap .dl .dd:last-child {
-		display: none;
-	}
-
-	.tit_1 .more {
-		margin-top: 5px;
-		height: 20px;
-	}
-
-	.tit_1 .more a {
-		padding-left: 7px;
-		line-height: 20px;
-		background-size: 2px auto;
-	}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_b{
+    width: 100%;
+    float: left;
+    margin-top: 0.2rem;
+    padding-top: 0.2rem;
+    border-top: solid 0.01rem white;
+    border-top: solid 0.01rem rgba(255, 255, 255, 0.1);
 }
-
-@media screen and (max-height:530px) {
-	.customer .contentWrap .dl .dd:first-child {
-		display: none;
-	}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_b .l2 h3{
+    width: 100%;
+    float: left;
+    font-size: 0.14rem !important;
+    color: #019ee5;
+    line-height: 0.64rem;
+}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_b .l2 h3 b{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.55rem !important;
+    font-family: Arial;
+    font-weight: bold;
+    margin-right: 0.05rem;
+}
+.customer .contentWrap .middlebox .dl .dd.d1 .number .number_b .l2 h5{
+    width: 100%;
+    float: left;
+    margin-top: 0.05rem;
+    font-size: 0.14rem !important;
+    color: #fff;
+    line-height: 0.24rem;
+    opacity: 0.8;
 }
 </style>
+
 
 

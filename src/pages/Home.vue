@@ -437,7 +437,7 @@ export default {
 	opacity: 1;
 }
 .rightFixed ul li.smile img {
-	width: 50%;
+	width: 0.25rem !important;
 	height: auto;
 	margin-top: 0.12rem;
   margin-left: 0.13rem;

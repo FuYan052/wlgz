@@ -39,7 +39,11 @@ img {
 
 /* =================================初始化字体设置====================================================== */
 html { font-size:100px; }
-@media(min-width:540px){ html { font-size:100px; } } 
+@media(max-width:1630px){ html { font-size: 84.375px; } }
+@media(max-width:1500px){ html { font-size: 84.375px; } }
+@media(max-width:1360px){ html { font-size: 84.375px; } }
+@media(max-width:991px){ html { font-size: 84.375px; } }
+@media(max-width:767px){ html { font-size: 84.375px; } }
 @media(max-width:540px){ html { font-size:84.375px; } } /*Android常用宽度*/
 @media(max-width:480px){ html { font-size:75px; } }		/*Android常用宽度*/
 @media(max-width:414px){ html { font-size:64.69px; } }  /*i6Plus,i7Plus宽度*/  

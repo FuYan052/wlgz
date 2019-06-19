@@ -292,7 +292,7 @@ export default {
                 float: left;
                 height: 100%;
                 position: relative;
-                padding: 0 0.2rem;
+                padding: 0 0.1rem;
                 border-left: solid 1px #dfdfdf;
                 text-align: center;
                 .tablebox {
@@ -325,7 +325,9 @@ export default {
                         }
                         .img{
                             width: 100%;
-                            height: 3.07rem;
+                            // height: 3.07rem;
+                            // width: 2.04rem;
+                            height: 2.04rem;
                             margin-top: 40px;
                             overflow: hidden;
                             position: relative;

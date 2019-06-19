@@ -2,7 +2,7 @@
   <div class="partner">
     <div class="topnav">
         <div class="top">
-          <div class="case-logo"><a href="/" title=""><img src="../assets/logo.png"></a></div>
+          <div class="case-logo"><a href="/" title=""><img src="../assets/logoBlack.png"></a></div>
           <!-- 导航切换按钮 -->
           <div class="navBtn" @mouseover="showNav"></div>
         </div>
@@ -15,23 +15,23 @@
     <!-- 合作列表 -->
     <div class="partnerList">
       <table>
-        <tr v-for="item in 4" :key="item">
-          <td v-for="it in 4" :key="it">
+        <tr v-for="(item,index) in logoList" :key="index">
+          <td v-for="(it,ind) in item" :key="ind">
             <span>
-              <img src="../assets/kehu.png" alt="">
+              <img :src="it.url" alt="">
             </span>
           </td>
         </tr>
       </table>
     </div>
     <!-- 分页器 -->
-  <div class="page">
+  <!-- <div class="page">
     <el-pagination
       background
       layout="prev, pager, next"
-      :total="7">
+      :total="total">
     </el-pagination>
-  </div>
+  </div> -->
   <!-- 网页脚部 -->
   <page-bottom></page-bottom>
 
@@ -78,9 +78,59 @@ export default {
   },
   data() {
 		return{
-			isShowNav: false
+      isShowNav: false,
+      logoList: []
 		}
-	},
+  },
+  created() {
+    this.logoList = [
+      [{
+        url: require('../assets/logo1.jpg')
+      },
+      {
+        url: require('../assets/logo2.jpg')
+      },
+      {
+        url: require('../assets/logo3.jpg')
+      },
+      {
+        url: require('../assets/logo4.jpg')
+      }],
+      [{
+        url: require('../assets/logo5.jpg')
+      },
+      {
+        url: require('../assets/logo6.jpg')
+      },
+      {
+        url: require('../assets/logo7.jpg')
+      },
+      {
+        url: require('../assets/logo8.jpg')
+      }],
+      [{
+        url: require('../assets/logo9.jpg')
+      },
+      {
+        url: require('../assets/logo10.jpg')
+      },
+      {
+        url: require('../assets/logo11.jpg')
+      },
+      {
+        url: require('../assets/logo12.jpg')
+      }],
+      [{
+        url: require('../assets/logo13.jpg')
+      },
+      {
+        url: require('../assets/logo14.jpg')
+      },
+      {
+        url: require('../assets/logo15.jpg')
+      }],
+    ]
+  },
 	methods: {
 		// 鼠标滑过按钮显示导航页
 		showNav(){
@@ -365,6 +415,9 @@ export default {
 .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #3f3f3f;
     color: #FFF;
+}
+.partner .partnerList table tr td span img{
+  max-height: 100% !important;
 }
 </style>
 

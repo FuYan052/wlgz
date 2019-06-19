@@ -2,7 +2,7 @@
   <div class="casePage">
     <div class="topnav">
       <div class="top">
-        <div class="case-logo"><a href="/" title=""><img src="../assets/logo.png"></a></div>
+        <div class="case-logo"><a href="/" title=""><img src="../assets/logoBlack.png"></a></div>
         <!-- 导航切换按钮 -->
         <div class="navBtn" @mouseover="showNav"></div>
       </div>
@@ -10,7 +10,7 @@
   <!-- 标题 -->
   <div class="pageTitle">
     <p class="chinTitle">案例</p>
-    <p class="engTitle">Projects</p>
+    <p class="engTitle">Case</p>
     <p></p>
   </div>
   <!-- 分类按钮 -->
@@ -87,7 +87,7 @@ export default {
   data() {
 		return{
       isShowNav: false,
-      navList: ['全部','餐饮空间设计','办公空间设计','酒店会所设计','住宅空间设计','其他'],
+      navList: ['全部','餐饮空间设计','办公空间设计','酒店会所设计','别墅空间设计','其他'],
       currNavIndex: 0,
       current: 1,
       pageSize: 8,
@@ -147,7 +147,7 @@ export default {
       if(item == '餐饮空间设计'){
           this.currList = this._canyinList.data
       }
-      if(item == '住宅空间设计'){
+      if(item == '别墅空间设计'){
           this.currList = this._villaList.data
       }
       if(item == '其他'){
@@ -255,12 +255,15 @@ export default {
     height: 1.02rem;
     border-bottom: 2px solid #ececec;
     ul{
-      width: 8.7rem;
+      // width: 8.7rem;
       height: 100%;
       margin: 0 auto;
+      text-align: center;
       li{
-        float: left;
-        height: 100%;
+        // float: left;
+        // height: 100%;
+        display: inline-block;
+        vertical-align: middle;
         line-height: 1.02rem;
         height: 1.02rem;
         font-size: 0.16rem;
@@ -293,13 +296,18 @@ export default {
         vertical-align: text-top;
         margin-left: 0.15rem;
         img{
-          width: 4.6rem;
-          height: 3rem;
+          // width: 4.6rem;
+          // height: 3rem;
+          width: 100%;
         }
         h4{
           font-size: 0.24rem;
           color: #766e6b;
           margin-top: 0.3rem;
+          width: 100%;
+          overflow: hidden;/*超出部分隐藏*/
+          text-overflow:ellipsis;/* 超出部分显示省略号 */
+          white-space: nowrap;/*规定段落中的文本不进行换行 */
         }
         h6{
           font-size: 0.18rem;
@@ -452,6 +460,11 @@ export default {
 .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #3f3f3f;
     color: #FFF;
+}
+@media screen and (max-width: 1360px){
+  .casePage .caseList ul li{
+    height: 4.35rem !important;
+  }
 }
 </style>
 

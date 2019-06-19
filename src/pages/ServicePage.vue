@@ -4,6 +4,14 @@
       <!-- 导航切换按钮 -->
       <div class="navBtn" @mouseover="showNav"></div>
     </div>
+    <!-- logo -->
+    <div class="pz_top hidden-xs">
+      <div class="top">
+          <div class="logo">
+            <img src="../assets/logo.png">
+          </div>
+      </div>
+    </div>
     <!-- banner图 -->
     <div class="topBanner">
       <img src="../assets/serviceTop.png" alt="">
@@ -20,19 +28,18 @@
       to be realizedwon't be blind at least.
     </div>
     <div class="wrap1">
-      <div  class="item" v-for="index in 4" :key="index" @click="changeCurrent(index)" :class="{currActive1:activeIndex==index}">
-        <div class="img"></div>
+      <div  class="item" v-for="(item,index) in list1" :key="index" @click="changeCurrent(item,index)" :class="{currActive1:activeIndex==index}">
+        <div class="img" :class="{activeImg:activeIndex==index}"></div>
         <div class="blue">
-          <p class="p p1">契合企业灵魂</p>
-          <p class="p p2">Safety system</p>
-          <p class="p p3">网页是构成网站的基本元素是必<br />虚的法人网页是构成的基本元素是必<br />某个角落
-        </p>
+          <p class="p p1">{{item.p1}}</p>
+          <p class="p p2">{{item.p2}}</p>
+          <p class="p p3">{{item.p3}}</p>
         </div>
       </div>
       <div class="btn">
         <div class="cirBox">
           <!-- <a href="javascript:void(0)" @click="changeCurrent(index)" v-for="index in 4" :key="index" :class="{currActive:activeIndex==index}"> -->
-          <div @click="changeCurrent(index)" v-for="index in 4" :key="index" :class="{currActive2:activeIndex==index}"></div>
+          <div @click="changeCurrent(item,index)" v-for="(item,index) in list1" :key="index" :class="{currActive2:activeIndex==index}"></div>
         <!-- </a> -->
         </div>
       </div>
@@ -115,7 +122,7 @@
           <div class="pic">
             <img src="../assets/casePic.png" alt="">
           </div>
-          <div class="moreBtn">more</div>
+          <!-- <div class="moreBtn">more</div> -->
         </div>
       </div>
     </div>
@@ -188,8 +195,33 @@ export default {
   data() {
     return {
       isShowNav: false,
-      activeIndex: 1
+      activeIndex: 1,
+      list1: []
     }
+  },
+  created() {
+    this.list1 = [
+      {
+        p1:'激发灵感',
+        p2:'Announcement message',
+        p3:`每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师`
+      },
+      {
+        p1:'契合企业灵魂',
+        p2:'Safety system     ',
+        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师'
+      },
+      {
+        p1:'彰显文化底蕴',
+        p2:'Boom shakalak',
+        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师'
+      },
+      {
+        p1:'包容多样需求',
+        p2:'Announcement message',
+        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师'
+      },
+    ]
   },
   methods:{
     // 鼠标滑过按钮显示导航页
@@ -241,7 +273,7 @@ export default {
       var anchor = this.$el.querySelector(selector)
       document.documentElement.scrollTop = anchor.offsetTop
     },
-    changeCurrent(index) {
+    changeCurrent(item,index) {
       console.log(index)
       this.activeIndex = index
     }
@@ -252,6 +284,33 @@ export default {
 <style lang="scss" scoped>
 .service{
   width: 100%;
+  .pz_top{
+			float: left;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 45px;
+			z-index: 80;
+			-webkit-transition: all 0.3s ease-out 0s;
+			-moz-transition: all 0.3s ease-out 0s;
+			-o-transition: all 0.3s ease-out 0s;
+			transition: all 0.3s ease-out 0s;
+			.top{
+				width: 100%;
+				float: left;
+				height: 26px;
+				padding: 0 60px;
+				.logo {
+					float: left;
+					width: 204px;
+					margin-top: 0px;
+					img{
+						width: 100%;
+    				float: left;
+					}
+				}
+			}
+		}
   .btnBox{
     width: 100%;
     position: fixed;
@@ -279,10 +338,11 @@ export default {
   }
   .topBanner{
     width: 100%;
-    height: 8.68rem;
+    height: auto;
     img{
+      display: block;
       width: 100%;
-      height: 8.68rem;
+      height: auto;
     }
   }
   .title1{
@@ -345,6 +405,7 @@ export default {
         height: 1.73rem;
         margin: 0.65rem auto;
         background: url('../assets/5.png') no-repeat center;
+        background-size: contain !important;
       }
       .blue{
         width: 100%;
@@ -358,7 +419,7 @@ export default {
         }
         .p1{
           font-size: 0.18rem;
-          color: #383838;
+          // color: #383838;
         }
         .p2{
           font-size: 0.12rem;
@@ -373,6 +434,38 @@ export default {
           margin: 0 auto;
           margin-top: 0.15rem;
         }
+      }
+    }
+    .item:nth-of-type(1){
+      .img{
+        background: url('../assets/s-1-1.png') no-repeat center;
+      }
+      .activeImg{
+        background: url('../assets/s-1-2.png') no-repeat center;
+      }
+    }
+    .item:nth-of-type(2){
+      .img{
+        background: url('../assets/s-2-1.png') no-repeat center;
+      }
+      .activeImg{
+        background: url('../assets/s-2-2.png') no-repeat center;
+      }
+    }
+    .item:nth-of-type(3){
+      .img{
+        background: url('../assets/s-3-1.png') no-repeat center;
+      }
+      .activeImg{
+        background: url('../assets/s-3-2.png') no-repeat center;
+      }
+    }
+    .item:nth-of-type(4){
+      .img{
+        background: url('../assets/s-4-1.png') no-repeat center;
+      }
+      .activeImg{
+        background: url('../assets/s-4-2.png') no-repeat center;
       }
     }
     .blue::before{
@@ -414,7 +507,7 @@ export default {
     }
     .currActive1{
       .img{
-        background: url('../assets/7.png') no-repeat center;
+        // background: url('../assets/7.png') no-repeat center;
       }
       .blue{
         background: #0f79e7;
@@ -453,10 +546,12 @@ export default {
       }
       .detail{
         font-size: 0.18rem;
-        line-height: 0.36rem;
+        line-height: 0.32rem;
         text-align: center;
+        margin: 0 auto;
         margin-top: 0.55rem;
         color: #e9e9e9;
+        width: 91.6%;
       }
     }
     .sect:nth-child(even){
@@ -562,21 +657,21 @@ export default {
           }
           span::before{
             content: '';
-            width: 90%;
+            width: 70%;
             height: 100%;
             background: url('../assets/34.png') no-repeat left center;
             background-size: 100% 0.02rem;
             position: absolute;
-            right: -100%;
+            right: -70%;
             top: 0;
           }
           span::after{
             content: '';
-            width: 90%;
+            width: 70%;
             height: 100%;
             background: url('../assets/33.png') no-repeat left center;
             position: absolute;
-            left: -100%;
+            left: -70%;
             top: 0;
           }
         }
@@ -847,6 +942,41 @@ export default {
 }
 </style>
 <style>
-
+@media screen and (max-width: 1360px){
+  .service .wrap1{
+    height: 6.25rem !important;
+  }
+  .service .wrap1 .item{
+    height: auto;
+  }
+  .service .wrap1 .item .img{
+    width: 1.43rem !important;
+    height: 1.43rem !important;
+    margin: 0.55rem auto !important;
+}
+.service .wrap2 .content{
+  width: 75.41% !important;
+}
+.service .wrap2 .content .serItem .icon{
+    /* left: 28% !important; */
+}
+.service .wrap2 .content .serItem:hover .titleBox span{
+    left: 13% !important;
+}
+.service .wrap2 .content .serItem:hover .titleBox span::before{
+    width: 30% !important;
+    right: -20% !important;
+}
+.service .wrap2 .content .serItem:hover .titleBox span::after{
+    width: 30% !important;
+    left: -20% !important;
+}
+.service .wrap2 .title .t1 span::before{
+  width: 33% !important;
+}
+.service .wrap2 .title .t1 span::after{
+  width: 33% !important;
+}
+}
 </style>
 

@@ -2,7 +2,7 @@
   <!-- 顶部图片 -->
   <div class="about">
     <div class="bannerBox">
-      <img src="../assets/aboutTop.png" alt="">
+      <img src="../assets/aboutBg.png" alt="">
     </div>
     <div class="btnBox">
       <!-- 导航切换按钮 -->
@@ -186,11 +186,12 @@ export default {
   }
   .bannerBox{
     width: 100%;
-    height: 5.25rem;
+    // height: 5.25rem;
+    height: auto;
     margin-bottom: 0.55rem;
     img{
       width: 100%;
-      height: 100%;
+      height: auto;
     }
   }
   .companyDetail{

@@ -9,6 +9,17 @@
               </div>
               <div class="slick_res2l">
                   <div>
+
+                      <!-- <div class="zbox">
+                            	        <div class="img"><a href="/list/13/106.htm" title="" tabindex="0"><img src="/upload/images/20181019/需求分析6074942.jpg" alt="设计研究" title="设计研究"></a></div>
+                                        <div class="text">
+                                	        <h4>设计研究</h4>
+                                            <h6>Design Research</h6>
+                                            <div class="p">设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。</div>
+                                            <div class="detail"><a href="/list/13/106.htm" title="" tabindex="0">more</a></div>
+                                        </div>
+                                    </div> -->
+
                       <div class="zbox">
                           <div class="img">
                             <!-- <img :src="currServiceDetail.img" alt="" title=""> -->
@@ -158,21 +169,24 @@ export default {
               width: 100%;
               float: left;
               padding: 0.8rem 7.46% 0.8rem 6.78%;
-              img{
+              .img{
                 width: 55.45%;
                 float: left;
                 position: relative;
                 z-index: 5;
+                img{
+                  display: block;
+                }
               }
               .text{
                 margin-left: 60.4%;
                 h4{
                   width: 100%;
                   position: relative;
-                  margin-top: 0.22rem;
+                  // margin-top: 0.22rem;
                   font-size: 0.24rem;
                   color: white;
-                  line-height: 0.4rem;
+                  // line-height: 0.4rem;
                   letter-spacing: 0.01rem;
                 }
                 h4:before{
@@ -311,6 +325,42 @@ export default {
       }
     }
   }
+}
+</style>
+<style>
+@media screen and (max-width: 1500px){
+.service .contentBox .right .tablebox .middlebox .slick_res2r li {
+    padding: 0 30% 0 6% !important;
+  }
+}
+@media screen and (max-width: 1360px){
+  .service .contentBox .left .tablebox .middlebox .slick_res2l .zbox {
+    padding: 60px 5% 60px 4% !important;
+    width: 100% !important;
+    float: left !important;
+  }
+  .service .contentBox .left .tablebox .middlebox .slick_res2l .zbox .img {
+      width: 50% !important;
+  }
+  .service .contentBox .left .tablebox .middlebox .slick_res2l .zbox .text{
+    margin-left: 54% !important;
+  }
+
+ .service .contentBox .right .tablebox .middlebox .slick_res2r li .zbox {
+    height: 90px !important;
+  }
+.service .contentBox .right .tablebox .middlebox .slick_res2r li .zbox .ico {
+    width: 44px !important;
+    height: 44px !important;
+    margin-top: -22px !important;
+  }
+ .service .contentBox .right .tablebox .middlebox .slick_res2r li .zbox h4 {
+    font-size: 0.16rem !important;
+    line-height: 0.32rem;
+}
+.service .contentBox .right .tablebox .middlebox .slick_res2r li .zbox h5 {
+    line-height: 0.16rem !important;
+}
 }
 </style>
 

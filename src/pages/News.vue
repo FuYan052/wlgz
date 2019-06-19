@@ -6,7 +6,7 @@
     </div>
     <!-- 顶部图片 -->
     <div class="topBanner">
-      <img src="../assets/newsTop.png" alt="">
+      <img src="../assets/newsBg.png" alt="">
     </div>
     <!-- 标题 -->
     <div class="pageTitle">
@@ -16,29 +16,32 @@
     <!-- 分类按钮 -->
     <div class="cateBtn">
       <ul>
-        <li>全部</li>
-        <li>行业动态</li>
-        <li class="last">公司新闻</li>
+        <li 
+          v-for="(item,index) in newsCate" 
+          :key="index"
+          @click="changeNewsCate(item,index)"
+          :class="{activeNav:activeNavIndex==index}"
+          >{{item}}</li>
       </ul>
     </div>
     <!-- 新闻列表 -->
     <div class="newsList">
       <ul>
-        <li v-for="item in 4" :key="item">
+        <li v-for="(item,index) in currList" :key="index">
           <div class="leftPic">
-            <img src="../assets/newsPic.png" alt="">
+            <img :src="item.imgUrl" alt="">
           </div>
           <div class="rightTitle">
             <p class="p1">
-              家居体验馆-同一空间无限可能
+              {{item.title}}
             </p>
             <p class="p2">
-              合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响
+              {{item.detail}}
             </p>
             <p class="p3">
-              12-08 / 
+              {{item.month}} / 
               <span>
-                2015
+                {{item.year}}
               </span>
             </p>
           </div>
@@ -53,7 +56,9 @@
       <el-pagination
         background
         layout="prev, pager, next"
-        :total="7">
+        @current-change="pageChange"
+        :page-size="4"
+        :total="total">
       </el-pagination>
     </div>
     <!-- 网页脚部 -->
@@ -101,10 +106,90 @@ export default {
   },
   data() {
 		return{
-			isShowNav: false
+      isShowNav: false,
+      newsCate: ['全部','公司新闻','行业动态'],
+      activeNavIndex: 0,
+      current: 1,
+      pageSize: 4,
+      total: null,
+      newsList: [],
+      currList: '', //分页后数组用于渲染
 		}
   },
+  created() {
+    this.newsList = [
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+      {
+        imgUrl: require('../assets/newsPic.png'),
+        title: '家居体验馆-同一空间无限可能',
+        detail: '合理的家居尺度对于人们的的生活至关重要，掌握不当，会给使用者带来诸多不便，升值影响甚至影响',
+        month: '12-08',
+        year: '2015'
+      },
+    ]
+
+    // 第一次进入是当前页数据列表
+      this.currList = this.newsList.slice(0, 4)
+      this.total = this.newsList.length
+  },
   methods: {
+    // 点击页码
+    pageChange(pageNumber){
+      this.current = pageNumber;  // 当前页改变
+      // 当前页起始下标及结束下标
+      const start = (this.current - 1) * this.pageSize;
+      const end = start + this.pageSize;
+      // 当前页数据列表
+      this.currList = this.newsList.slice(start, end)
+      window.scroll(0,515)
+    },
+    // 切换新闻分类
+    changeNewsCate(item,index) {
+      this.activeNavIndex = index
+      // 再切换新闻数组
+    },
+
 		// 鼠标滑过按钮显示导航页
 		showNav(){
 			this.isShowNav = true
@@ -183,35 +268,39 @@ export default {
   }
   .topBanner{
     width: 100%;
-    height: 5.15rem;
+    height: auto;
     margin-bottom: 1.02rem;
     img{
       width: 100%;
-      height: 100%;
+      height: auto;
     }
   }
   .cateBtn{
     width: 100%;
     height: 1.02rem;
     ul{
-      width: 4.20rem;
+      text-align: center;
       height: 100%;
       margin: 0 auto;
       li{
-        float: left;
+        display: inline-block;
+        vertical-align: middle;
         height: 100%;
         line-height: 1.02rem;
         height: 1.02rem;
         font-size: 0.16rem;
-        padding: 0 0.35rem;
+        padding: 0 0.5rem;
         color: #c1c1c1;
         cursor: pointer;
         background: url('../assets/cateBg.png') no-repeat right center;
       }
-      li:hover{  //选中项样式
+      .activeNav{
         color: #2a1e32;
       }
-      .last{
+      // li:hover{  //选中项样式
+      //   color: #2a1e32;
+      // }
+      li:nth-last-child(1){
         background: none;
       }
     }
@@ -236,7 +325,7 @@ export default {
           float: left;
           img{
             width: 4.6rem;
-            height: 2.3rem;
+            height: auto;
           }
         }
         .rightTitle{
@@ -248,7 +337,7 @@ export default {
             height: 0.58rem;
             font-size: .24rem;
             color: #757670;
-            line-height: 0.58rem;
+            // line-height: 0.58rem;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
@@ -438,5 +527,22 @@ export default {
 .el-pagination.is-background .el-pager li:not(.disabled).active {
   background-color: #3f3f3f;
   color: #FFF;
+}
+@media screen and (max-width: 1360px){
+  .news .newsList ul li{
+    height: 2.2rem !important;
+}
+  .news .newsList ul li .rightTitle{
+    width: 65% !important;
+    height: 100%;
+    float: right !important;
+  }
+  .news .newsList ul li .leftPic img{
+    height: auto;
+  }
+  .news .newsList ul li .rightTitle .p3[data-v-6aa13012] {
+    line-height: 0.2rem !important;
+    margin-top: 0.6rem !important;
+  }
 }
 </style>

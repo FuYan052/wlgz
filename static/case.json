@@ -12,7 +12,7 @@
           "img": [
             {
               "order": "1",
-              "url": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%8A%9E%E5%85%AC%E7%A9%BA%E9%97%B4/1.%E8%81%94%E6%83%B3%EF%BC%88%E5%85%B0%E5%B7%9E%EF%BC%89/1.jpg"
+              "url": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E9%A6%96%E9%A1%B5/20190619101915.jpg"
             },
             {
               "order": "2",
@@ -40,7 +40,7 @@
           "img": [
             {
               "order": "1",
-              "url": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%8A%9E%E5%85%AC%E7%A9%BA%E9%97%B4/2.G7%E6%99%BA%E8%83%BD%E4%BA%92%E8%81%94/1.jpg"
+              "url": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E9%A6%96%E9%A1%B5/20190619101926.jpg"
             },
             {
               "order": "2",
@@ -72,7 +72,7 @@
           "img": [
             {
               "order": "1",
-              "url": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%8A%9E%E5%85%AC%E7%A9%BA%E9%97%B4/3.%E7%BB%B5%E9%98%B3%E6%99%BA%E6%85%A7%E5%9F%8E%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8600%E5%B9%B3Loft%E5%8A%9E%E5%85%AC%E5%AE%A4%E9%A3%8E%E6%A0%BC/1.jpg"
+              "url": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E9%A6%96%E9%A1%B5/20190619101929.jpg"
             },
             {
               "order": "2",
@@ -497,6 +497,10 @@
           ]
         },
         {
+          "name": "桐梓林咖啡馆",
+          "address":"成都",
+			    "details":"",
+			    "order":"4",
           "img": [
             {
               "order": "1",
@@ -1190,35 +1194,35 @@
       "title2": "Design Research",
       "detail": "1设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。",
       "img": "../../assets/s-big.png",
-      "ico": "../../assets/s1.png"
+      "ico": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%9B%BE%E6%A0%87/s1.png"
     },{
       "id": 2,
       "title": "首选班组",
       "title2": "Structural Design",
       "detail": "2设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。",
       "img": "../../assets/s-big.png",
-      "ico": "../../assets/s2.png"
+      "ico": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%9B%BE%E6%A0%87/s2.png"
     },{
       "id": 3,
       "title": "AI监理",
       "title2": "Automation Design",
       "detail": "3设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。",
       "img": "../../assets/s-big.png",
-      "ico": "../../assets/s1.png"
+      "ico": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%9B%BE%E6%A0%87/s1.png"
     },{
       "id": 4,
       "title": "直选材料",
       "title2": "Mould manufacturing",
       "detail": "4设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。",
       "img": "../../assets/s-big.png",
-      "ico": "../../assets/s3.png"
+      "ico": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%9B%BE%E6%A0%87/s3.png"
     },{
       "id": 5,
       "title": "智能办公",
       "title2": "Smart Office",
       "detail": "5设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。",
       "img": "../../assets/s-big.png",
-      "ico": "../../assets/zn.png"
+      "ico": "https://baogongxia1.oss-cn-shenzhen.aliyuncs.com/%E6%A1%88%E4%BE%8B/%E5%9B%BE%E6%A0%87/ser3.png"
     }
   ]
 
