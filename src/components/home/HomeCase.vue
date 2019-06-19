@@ -18,14 +18,40 @@
                     </div>
             </div>
         </div>
+
         <!-- 中间灰色部分 -->
         <div class="middleBox">
             <div class="title"><span>{{currCateName}}</span></div>
         </div>
+
         <!-- 右边展示案例 -->
         <div class="rightShowCase">
             <ul>
+                <!-- <li v-for="(item,index) in currentList.data" :key="index">
+                    <div class="tablebox">
+                        <div class="middlebox">
+
+                        </div>
+                    </div>
+                </li> -->
+                
                 <li class="l1" v-for="(item,index) in currentList.data" :key="index">
+                    <a href="javascript:void(0)" title="">
+                        <div class="tablebox">
+                            <div class="middlebox">
+                                <h5>{{item.address}}</h5>
+                                <h3 class="elli">{{item.name}}</h3>
+                                <div class="img"><img :src="item.img[0].url"
+                                        alt="" title=""></div>
+                                <div class="p">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <!-- <li class="l1" v-for="(item,index) in currentList.data" :key="index">
                         <div class="tablebox">
                             <div class="middlebox">
                                 <h5>{{item.address}}</h5>
@@ -38,17 +64,18 @@
                                 </div>
                             </div>
                         </div>
-                </li>
+                </li> -->
             </ul>
+
             <!-- 右侧按钮 -->
-            <div class="rightBtn">
+            <!-- <div class="rightBtn">
                 <div class="moreBtn">
                     <a href="javascript:void(0)" @click="allCase">
                         <span>全部案例</span>
                         <img src="http://www.chuangwudao.com/templates/cn/images/index1_6.png" alt="">
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -118,8 +145,7 @@ export default {
 <style lang="scss" scoped>
 .case{
     width: 100%;
-    height: 9.3rem;
-    // padding: 0 3.9%;
+    height: 100%;
     .leftBox{
         width: 28.64%;
         height: 100%;
@@ -287,76 +313,85 @@ export default {
             position: relative;
             border-right: solid 1px #dfdfdf;
             overflow: hidden;
-            li{
-                width: 33.333%;
-                float: left;
-                height: 100%;
-                position: relative;
-                padding: 0 0.1rem;
-                border-left: solid 1px #dfdfdf;
-                text-align: center;
-                .tablebox {
-                    display: table;
-                    vertical-align: middle;
-                    height: 100%;
-                    position: relative;
-                    width: 100%;
-                    table-layout: fixed;
-                    .middlebox {
-                        display: table-cell;
-                        vertical-align: middle;
-                        h5{
-                            width: 100%;
-                            font-size: 0.12rem;
-                            color: #888;
-                            line-height: 0.3rem;
-                            margin-top: 0.1rem;
-                        }
-                        h3{
-                            width: 100%;
-                            font-size: 0.24rem;
-                            margin: 0;
-                            color: #333;
-                            line-height: 0.42rem;
-                            letter-spacing: 1px;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                        .img{
-                            width: 100%;
-                            // height: 3.07rem;
-                            // width: 2.04rem;
-                            height: 2.04rem;
-                            margin-top: 40px;
-                            overflow: hidden;
-                            position: relative;
-                            img{
-                                width: 88%;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                bottom: 0;
-                                margin: auto;
-                                transition: all 0.6s linear 0.3s;
-                                -moz-transition: all 0.6s linear 0.3s;
-                                -webkit-transition: all 0.6s linear 0.3s;
-                                -o-transition: width all 0.6s linear 0.3s;
-                            }
-                        }
-                        .p{
-                            width: 100%;
-                            margin-top: 0.32rem;
-                            font-size: 0.14rem;
-                            color: #666;
-                            line-height: 0.28rem;
-                            height: 1.4rem;
-                            overflow: hidden;
-                        }
-                    }
-                }
-            }
+            vertical-align: middle;
+            // li{
+            //     width: 33.333%;
+            //     float: left;
+            //     // display: inline-block;
+            //     height: 100%;
+            //     position: relative;
+            //     padding: 0 0.1rem;
+            //     list-style: none;
+            //     border-left: solid 1px #dfdfdf;
+            //     border: 1px solid red;
+            //     text-align: center;
+            //     .tablebox {
+            //         // display: table;
+            //         // vertical-align: middle;
+            //         display: flex;
+            //         align-items: center;
+            //         height: 100%;
+            //         position: relative;
+            //         width: 100%;
+            //         // table-layout: fixed;
+            //         .middlebox {
+            //             display: table-cell;
+            //             vertical-align: middle;
+            //             // height: 300px;
+            //             width: 100%;
+            //             border: 1px solid blue;
+            //             h5{
+            //                 width: 100%;
+            //                 font-size: 0.12rem;
+            //                 color: #888;
+            //                 line-height: 0.3rem;
+            //                 margin-top: 0.1rem;
+            //             }
+            //             h3{
+            //                 width: 100%;
+            //                 font-size: 0.24rem;
+            //                 margin: 0;
+            //                 color: #333;
+            //                 line-height: 0.42rem;
+            //                 letter-spacing: 1px;
+            //                 white-space: nowrap;
+            //                 overflow: hidden;
+            //                 text-overflow: ellipsis;
+            //             }
+            //             .img{
+            //                 width: 100%;
+            //                 // height: 3.07rem;
+            //                 // width: 2.04rem;
+            //                 height: 2.54rem;
+            //                 margin-top: 40px;
+            //                 overflow: hidden;
+            //                 position: relative;
+            //                 img{
+            //                     width: 88%;
+            //                     position: absolute;
+            //                     top: 0;
+            //                     left: 0;
+            //                     right: 0;
+            //                     bottom: 0;
+            //                     margin: auto;
+            //                     transition: all 0.6s linear 0.3s;
+            //                     -moz-transition: all 0.6s linear 0.3s;
+            //                     -webkit-transition: all 0.6s linear 0.3s;
+            //                     -o-transition: width all 0.6s linear 0.3s;
+            //                 }
+            //             }
+            //             .p{
+            //                 width: 100%;
+            //                 margin-top: 0.32rem;
+            //                 font-size: 0.14rem;
+            //                 color: #666;
+            //                 line-height: 0.28rem;
+            //                 height: 1.4rem;
+            //                 overflow: hidden;
+            //             }
+            //         }
+            //     }
+            // }
             li:hover{
                 cursor: pointer;
                 background: #f1f1f1;
@@ -446,6 +481,91 @@ export default {
         }
     }
 }
+</style>
+<style>
+.case .rightShowCase ul li {
+    width: 33.333%;
+    float: left;
+    height: 100%;
+    position: relative;
+    padding: 0 0.1rem;
+    border-left: solid 1px #dfdfdf;
+}
+.case .rightShowCase ul li a {
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+.case .rightShowCase ul li a .tablebox {
+    display: table;
+    vertical-align: middle;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    table-layout: fixed;
+}
+.case .rightShowCase ul li a .tablebox .middlebox {
+    display: table-cell;
+    vertical-align: middle;
+}
+.case .rightShowCase ul li a h5 {
+    width: 100%;
+    font-size: 0.12rem;
+    color: #888;
+    line-height: 0.3rem;
+}
+.case .rightShowCase ul li a h3 {
+    width: 100%;
+    font-size: 0.24rem;
+    color: #333;
+    line-height: 0.42rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.case .rightShowCase ul li a .img {
+    width: 100%;
+    overflow: hidden;
+    height: 2.54rem;
+    margin-top: 0.4rem;
+    overflow: hidden;
+    position: relative;
+}
+.case .rightShowCase ul li a .img img {
+    width: 88%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: all 0.6s linear 0.3s;
+    -moz-transition: all 0.6s linear 0.3s;
+    -webkit-transition: all 0.6s linear 0.3s;
+    -o-transition: width all 0.6s linear 0.3s;
+}
+.case .rightShowCase ul li a .p {
+    width: 100%;
+    margin-top: 32px;
+    font-size: 14px;
+    color: #666;
+    line-height: 28px;
+    height: 140px;
+    overflow: hidden;
+}
+.case .rightShowCase ul li:hover{
+
+}
+@media screen and (max-width: 1360px){
+    .case .rightShowCase ul li .tablebox .middlebox .img[data-v-9b7236c2] {
+        height: 2.04rem !important;
+    }
+}
+
 </style>
 
 

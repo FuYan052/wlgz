@@ -95,7 +95,7 @@ export default {
 <style lang="scss" scoped>
 .service{
   width: 100%;
-  height: 9.24rem;
+  height: 100%;
   background: url('../../assets/serviceBg.png') no-repeat center center;
   background-size: cover;
   position: relative;

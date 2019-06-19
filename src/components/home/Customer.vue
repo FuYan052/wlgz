@@ -161,7 +161,7 @@ export default {
 <style lang="scss" scoped>
 .customer{
   width: 100%;
-  height: 8.98rem;
+  height: 100%;
   background: url('../../assets/c-bg.png') no-repeat center bottom;
   background-size: 100% auto;
   .contentWrap{

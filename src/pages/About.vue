@@ -21,7 +21,7 @@
       <div class="smallTitle">
         JWD&nbsp;DESIGN&nbsp;CO.LTD
       </div>
-      <div class="text text1">
+      <div class="aboutText text1">
         北京同创新业科技有限公司成立于2017年12月25日，2018年4月创立了包工侠平台，“包工侠”作为国内首<br />
         家施工业“征信应用+垂直运营”平台，旨在解决包工头与劳务、发包方的征信不对称现象。旨在解决包工头与劳务、发包方的征信不对称现象。
       </div>
@@ -34,7 +34,7 @@
       <div class="smallTitle">
         OUR&nbsp;ADVANTAGE
       </div>
-      <div class="text text2">
+      <div class="aboutText text2">
         室内与软装全方位设计及顾问<br />
         实现高品质室内空间<br />
         整合国际及高档品牌等资源与丰富专业经验<br />
@@ -408,7 +408,7 @@ export default {
   font-size: 0.16rem;
   color: #6e7679;
 }
-.text{
+.aboutText{
   font-size: 0.16rem;
   color: #646a6a;
   line-height: 0.3rem;

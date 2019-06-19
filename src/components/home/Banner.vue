@@ -39,6 +39,7 @@ export default {
 <style lang="scss" scoped>
 .banner{
   width: 100%;
+  height: 100%;
   // height: 9.1rem;
   // border: 1px solid red;
   .el-carousel{

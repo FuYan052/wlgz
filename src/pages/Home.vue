@@ -9,8 +9,36 @@
           </div>
       </div>
     </div>
+
+		<div id="dowebok">
+    <div class="section">
+        <!-- <div class="slide">第一屏的第一屏</div>
+        <div class="slide">第一屏的第二屏</div>
+        <div class="slide">第一屏的第三屏</div>
+        <div class="slide">第一屏的第四屏</div> -->
+
+				<!-- 轮播图 -->
+    		<banner></banner>
+    </div>
+    <div class="section">
+        <!-- 案例 -->
+    		<home-case></home-case>
+    </div>
+    <div class="section">
+        <!-- 服务 -->
+				<Service></Service>
+    </div>
+    <div class="section">
+        <!-- 客户 -->
+				<customer></customer>
+    </div>
+    <div class="section">
+        <!-- 联系 -->
+				<contact></contact>
+    </div>
+	</div>
     <!-- 轮播图 -->
-    <banner></banner>
+    <!-- <banner></banner> -->
 		<!-- 右侧固定联系方式 -->
 		<div class="rightFixed">
 			<ul>
@@ -65,13 +93,13 @@
     </div> -->
 
     <!-- 案例 -->
-    <home-case></home-case>
+    <!-- <home-case></home-case> -->
 		<!-- 服务 -->
-		<Service></Service>
+		<!-- <Service></Service> -->
 		<!-- 客户 -->
-		<customer></customer>
+		<!-- <customer></customer> -->
 		<!-- 联系 -->
-		<contact></contact>
+		<!-- <contact></contact> -->
   </div>
 	<!-- 默认隐藏的导航页 -->
 	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
@@ -186,7 +214,14 @@ export default {
 	height: 100%;
 	.home{
 		width: 100%;
+		height: 100%;
 		position: relative;
+		#dowebok{
+			height: 100%;
+			.section{
+				height: 100%;
+			}
+		}
 		.pz_top{
 			float: left;
 			width: 100%;

@@ -149,7 +149,7 @@ export default {
 <style lang="scss" scoped>
 .contact {
   width: 100%;
-  height: 9.24rem;
+  height: 100%;
   background: url("../../assets/lx-bg.png") no-repeat center center;
   background-size: cover;
   .contBox {
