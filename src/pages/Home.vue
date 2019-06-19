@@ -1,7 +1,9 @@
 <template>
 <div class="homeBox">
   <div class="home">
-    <!-- logo -->
+		<div id="dowebok">
+    <div class="section section1">
+			<!-- logo -->
     <div class="pz_top hidden-xs">
       <div class="top">
           <div class="logo">
@@ -9,30 +11,38 @@
           </div>
       </div>
     </div>
+				<!-- 切换导航页面按钮 -->
+				<div id="navBtn" @mouseover="showNav"></div>
 
-		<div id="dowebok">
-    <div class="section">
-        <!-- <div class="slide">第一屏的第一屏</div>
-        <div class="slide">第一屏的第二屏</div>
-        <div class="slide">第一屏的第三屏</div>
-        <div class="slide">第一屏的第四屏</div> -->
+        <div class="slide slide1"></div>
+        <div class="slide slide2">第一屏的第二屏</div>
+        <div class="slide slide3">第一屏的第三屏</div>
+        <div class="slide slide4">第一屏的第四屏</div>
 
 				<!-- 轮播图 -->
-    		<banner></banner>
+    		<!-- <banner></banner> -->
     </div>
-    <div class="section">
+    <div class="section section2">
+				<!-- 切换导航页面按钮 -->
+		<div id="navBtn" @mouseover="showNav"></div>
         <!-- 案例 -->
     		<home-case></home-case>
     </div>
-    <div class="section">
+    <div class="section section3">
+				<!-- 切换导航页面按钮 -->
+		<div id="navBtn" @mouseover="showNav"></div>
         <!-- 服务 -->
 				<Service></Service>
     </div>
-    <div class="section">
+    <div class="section section4">
+				<!-- 切换导航页面按钮 -->
+		<div id="navBtn" @mouseover="showNav"></div>
         <!-- 客户 -->
 				<customer></customer>
     </div>
-    <div class="section">
+    <div class="section section5">
+				<!-- 切换导航页面按钮 -->
+		<div id="navBtn" @mouseover="showNav"></div>
         <!-- 联系 -->
 				<contact></contact>
     </div>
@@ -66,14 +76,14 @@
 			</ul>
 		</div>
 		<!-- 切换导航页面按钮 -->
-		<div class="navBtn" @mouseover="showNav"></div>
+		<!-- <div id="navBtn" @mouseover="showNav"></div> -->
     <!-- 左侧导航栏 -->
-      <ul class="leftnav">
-        <li data-menuanchor="1" class="first" @click="scroll(0,0)"><a href="javascrip:viod(0)" title="蔚蓝公装">1<span>蔚蓝公装</span></a></li>
-        <li data-menuanchor="2" @click="scroll(0,910)"><a href="javascrip:viod(0)" title="案例">2<span>案例</span></a></li>
-        <li data-menuanchor="3" @click="scroll(0,1840)"><a href="javascrip:viod(0)" title="服务">3<span>服务</span></a></li>
-        <li data-menuanchor="4" @click="scroll(0,2764)"><a href="javascrip:viod(0)" title="客户">4<span>客户</span></a></li>
-        <li data-menuanchor="5" @click="scroll(0,3662)"><a href="javascrip:viod(0)" title="联系">5<span>联系</span></a></li>
+      <ul class="leftnav" id="leftNav">
+        <li data-menuanchor="h1" class="first"><a href="#h1" title="蔚蓝公装">1<span>蔚蓝公装</span></a></li>
+        <li data-menuanchor="h2"><a href="#h2" title="案例">2<span>案例</span></a></li>
+        <li data-menuanchor="h3"><a href="#h3" title="服务">3<span>服务</span></a></li>
+        <li data-menuanchor="h4"><a href="#h4" title="客户">4<span>客户</span></a></li>
+        <li data-menuanchor="h5"><a href="#h5" title="联系">5<span>联系</span></a></li>
     </ul>
     <!-- 手机可见菜单 -->
     <!-- <div class="pz_top visible-xs">
@@ -154,6 +164,13 @@ export default {
 		return{
 			isShowNav: false
 		}
+	},
+	created() {
+		// $('#dowebok').fullpage({
+    //       scrollOverflow: true,
+    //       anchors:["h1","h2","h3","h4","h5"],   //注意不带#
+    //       menu:"#leftNav"    //绑定菜单，data-menuanchor,才能使用.active
+    // });
 	},
 	methods: {
 		// 滚动条
@@ -236,7 +253,7 @@ export default {
 			.top{
 				width: 100%;
 				float: left;
-				height: 26px;
+				height: 36px;
 				padding: 0 60px;
 				.logo {
 					float: left;
@@ -360,6 +377,20 @@ export default {
 }
 </style>
 <style>
+.home .section1 .slide1{
+	background: url('../assets/homeBanner.png') no-repeat center;
+	/* background-size: 100% 100%; */
+	background-size: cover;
+}
+.home .section1 .slide2{
+	background: pink;
+}
+.home .section1 .slide3{
+	background: #dedede;
+}
+.home .section1 .slide4{
+	background: paleturquoise;
+}
 .rightFixed{
 	position: fixed;
 	right: 31px;
@@ -487,22 +518,36 @@ export default {
 	margin-top: 0.12rem;
   margin-left: 0.13rem;
 }
-.navBtn{
-	position: fixed;
+#navBtn{
+	position: absolute;
 	cursor: pointer;
 	right: 0.5rem;
 	top: 0.5rem;
-	width: 0.2rem;
-	height: 0.16rem;
+	width: 0.3rem;
+	height: 0.25rem;
 	text-align: center;
 	display: block;
 	z-index: 82;
 	background: url('../assets/navBtn.png') no-repeat center center;
+	background-size: contain;
 	-webkit-transition: all 0.3s ease-out 0s;
 	-moz-transition: all 0.3s ease-out 0s;
 	-o-transition: all 0.3s ease-out 0s;
 	transition: all 0.3s ease-out 0s;
 }
+.section1 #navBtn{
+	background: url('../assets/navBtnBai.png') no-repeat center center;
+	background-size: contain;
+}
+.section3 #navBtn{
+	background: url('../assets/navBtnBai.png') no-repeat center center;
+	background-size: contain;
+}
+.section5 #navBtn{
+	background: url('../assets/navBtnBai.png') no-repeat center center;
+	background-size: contain;
+}
+
 .navPage{
 	position: fixed;
 	width: 100%;

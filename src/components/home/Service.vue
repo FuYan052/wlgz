@@ -287,7 +287,7 @@ export default {
                   height: 0.67rem;
                   border: solid 0.01rem rgba(200, 200, 200, 0.3);
                   position: absolute;
-                  right: 0.4rem;
+                  right: 0.25rem;
                   top: 50%;
                   margin-top: -0.33rem;
                   -moz-border-radius: 50%;
