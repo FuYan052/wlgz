@@ -1,8 +1,8 @@
 <template>
   <div class="banner hidden-xs">
     <el-carousel :height="imgHeight+'px'">
-      <el-carousel-item v-for="item in 1" :key="item">
-        <img class="img-responsive" ref="imgHeight" @load="imgLoad" src="../../assets/homeBanner.png" alt="">
+      <el-carousel-item v-for="(item,index) in imgs" :key="index">
+        <img class="img-responsive" ref="imgHeight" @load="imgLoad" :src="item.url" alt="">
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -14,10 +14,21 @@ export default {
   data() {
     return{
       imgHeight: '',
+      imgs: []
     }
   },
   created() {
-    // this.height = $(window).width()*664/1920 + 'px';
+    this.imgs = [
+      {
+        url: require('../../assets/banner1.png')
+      },
+      {
+        url: require('../../assets/banner2.png')
+      },
+      {
+        url: require('../../assets/banner3.png')
+      }
+    ]
   },
   mounted() {
     window.addEventListener('resize', () => { //  resize:当调整浏览器窗口的大小时触发事件
@@ -70,7 +81,7 @@ export default {
   }
   .banner .el-carousel__indicators{
     position: absolute;
-    bottom: 0;
+    bottom: 9%;
     z-index: 20;
   }
 </style>

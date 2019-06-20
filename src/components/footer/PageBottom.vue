@@ -1,9 +1,20 @@
 <template>
   <div class="pageBottom">
     <div class="contBox">
-      <div class="left">
+      <div class="top">
         <p class="companyName">北京同创新业有限公司</p>
         <ul>
+            <li 
+            v-for="(item,index) in list" 
+            :key="index" 
+            @click="toPage(item,index)"
+            >
+              {{item.name}}
+            </li>
+          </ul>
+        
+        
+        <!-- <ul>
           <li>
             地址：<span>成都市高新区益州大道中段星宸国际B座1503号</span>
           </li>
@@ -19,7 +30,10 @@
           <li>
             邮箱：<span>baogongxia@163.com</span>
           </li>
-        </ul>
+        </ul> -->
+      </div>
+      <div class="left">
+        
         <div class="weixin">
           <p>
             <img src="../../assets/weixin.png" alt="">
@@ -31,7 +45,7 @@
       </div>
       <div class="right">
         <div class="navWrap">
-          <ul>
+          <!-- <ul>
             <li 
             v-for="(item,index) in list" 
             :key="index" 
@@ -39,12 +53,12 @@
             >
               {{item.name}}
             </li>
-            <!-- <li>案例</li>
+            <li>案例</li>
             <li>服务</li>
             <li>客户</li>
             <li>新闻</li>
-            <li>我们</li> -->
-          </ul>
+            <li>我们</li>
+          </ul> -->
         </div>
         <div class="rightBottom">
           <ul>
@@ -117,30 +131,52 @@ export default {
 <style lang="scss" scoped>
 .pageBottom{
   width: 100%;
-  height: 7.43rem;
+  height: 5.94rem;
   background: #fafafa;
+  border: 1px solid red;
+  overflow: hidden;
   .contBox{
-    width: 89.06%;
+    width: 100%;
     height: 6.7rem;
-    margin: 0 auto;
-    .left{
-      width: 50%;
-      float: left;
+    .top{
+      width: 100%;
+      padding: 0 5%;
+      height: 1.38rem;
+      margin: 0 auto;
+      border-bottom: 2px solid #f1f1f1;
+      position: relative;
       .companyName{
+        width: 27.53%;
         font-size: 0.22rem;
+        float: left;
         color: #9c9c9c;
-        margin-top: 1.2rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.7rem;
         letter-spacing: 0.01rem;
       }
       ul{
-        li{
-          color: #9f9f9f;
-          font-size: 0.18rem;
-          margin-bottom: 0.3rem;
-          letter-spacing: 0.01rem;
-        }
+          width: 65%;
+          height: 1.06rem;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          li{
+            width: 14.43%;
+            height: 1.06rem;
+            float: left;
+            line-height: 1.06rem;
+            text-align: center;
+            color: #9f9f9f;
+            font-size: 0.18rem;
+            letter-spacing: 0.01rem;
+            cursor: pointer;
+          }
       }
+    }
+    .left{
+      width: 50%;
+      float: left;
+      
+      
       .weixin{
         padding-top: 0.1rem;
         p{

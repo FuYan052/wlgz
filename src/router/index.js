@@ -6,6 +6,8 @@ import Curpartner from '@/pages/Curpartner'
 import News from '@/pages/News'
 import ServicePage from '@/pages/ServicePage'
 import About from '@/pages/About'
+import NewsDetail from '@/pages/NewsDetail'
+import CaseDetail from '@/pages/CaseDetail'
 
 Vue.use(Router)
 
@@ -44,6 +46,16 @@ export default new Router({
       path: '/about',
       name: 'About',
       component: About 
+    },
+    {
+      path: '/newsDetail',
+      name: 'NewsDetail',
+      component: NewsDetail 
+    },
+    {
+      path: '/caseDetail',
+      name: 'CaseDetail',
+      component: CaseDetail 
     }
   ]
 })

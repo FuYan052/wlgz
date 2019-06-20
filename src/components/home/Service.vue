@@ -9,21 +9,10 @@
               </div>
               <div class="slick_res2l">
                   <div>
-
-                      <!-- <div class="zbox">
-                            	        <div class="img"><a href="/list/13/106.htm" title="" tabindex="0"><img src="/upload/images/20181019/需求分析6074942.jpg" alt="设计研究" title="设计研究"></a></div>
-                                        <div class="text">
-                                	        <h4>设计研究</h4>
-                                            <h6>Design Research</h6>
-                                            <div class="p">设计研究是一项综合工程，包括产品调研、需求分析、竞品分析等，其目的是熟悉掌握产品的基本原理、状况，了解产品的使用环境、消费者的喜好、行业特性、竞品现状等，帮助设计师全面充分的了解产品。</div>
-                                            <div class="detail"><a href="/list/13/106.htm" title="" tabindex="0">more</a></div>
-                                        </div>
-                                    </div> -->
-
                       <div class="zbox">
                           <div class="img">
-                            <!-- <img :src="currServiceDetail.img" alt="" title=""> -->
-                            <img src="../../assets/s-big.png" alt="">
+                            <img :src="currServiceDetail.img" alt="" title="">
+                            <!-- <img src="../../assets/s-big.png" alt=""> -->
                           </div>
                           <div class="text">
                               <h4>{{currServiceDetail.title}}</h4>
@@ -75,7 +64,6 @@ export default {
       console.log(resp)
       this.serviceList = resp.data.service
       this.currServiceDetail = this.serviceList[0]
-
     })
   },
   methods:{
@@ -95,7 +83,7 @@ export default {
 <style lang="scss" scoped>
 .service{
   width: 100%;
-  height: 100%;
+  height: 9.24rem;
   background: url('../../assets/serviceBg.png') no-repeat center center;
   background-size: cover;
   position: relative;
@@ -287,7 +275,7 @@ export default {
                   height: 0.67rem;
                   border: solid 0.01rem rgba(200, 200, 200, 0.3);
                   position: absolute;
-                  right: 0.25rem;
+                  right: 0.4rem;
                   top: 50%;
                   margin-top: -0.33rem;
                   -moz-border-radius: 50%;
@@ -345,7 +333,6 @@ export default {
   .service .contentBox .left .tablebox .middlebox .slick_res2l .zbox .text{
     margin-left: 54% !important;
   }
-
  .service .contentBox .right .tablebox .middlebox .slick_res2r li .zbox {
     height: 90px !important;
   }
@@ -363,4 +350,3 @@ export default {
 }
 }
 </style>
-

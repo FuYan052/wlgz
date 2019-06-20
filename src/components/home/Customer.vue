@@ -161,7 +161,7 @@ export default {
 <style lang="scss" scoped>
 .customer{
   width: 100%;
-  height: 100%;
+  height: 8.98rem;
   background: url('../../assets/c-bg.png') no-repeat center bottom;
   background-size: 100% auto;
   .contentWrap{
@@ -470,6 +470,3 @@ export default {
     opacity: 0.8;
 }
 </style>
-
-
-
