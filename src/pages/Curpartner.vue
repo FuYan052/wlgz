@@ -4,7 +4,9 @@
         <div class="top">
           <div class="case-logo"><a href="/" title=""><img src="../assets/logoBlack.png"></a></div>
           <!-- 导航切换按钮 -->
-          <div class="navBtn" @mouseover="showNav"></div>
+          <div class="navBtn" @mouseover="showNav">
+            <img src="../assets/navBtn.png" alt="">
+          </div>
         </div>
     </div>
     <!-- 标题 -->
@@ -39,7 +41,7 @@
 	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
 		<div class="closed" @click="closeNav">
 			<div class="logo"><a href="/" title=""><img src="../assets/logo.png" alt="" title=""></a></div>
-			<div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
+			<div class="pf_menu_btn"><img src="../assets/close.jpg" alt=""></div>
 		</div>
 		<div id="navSlide" class="ph_menu">
             <div class='nav_box'>
@@ -206,21 +208,7 @@ export default {
         margin-top: 20px;
       }
       .navBtn{
-        position: fixed;
-        cursor: pointer;
-        right: 0.5rem;
-        top: 0.5rem;
-        width: 0.2rem;
-        height: 0.16rem;
-        text-align: center;
-        display: block;
-        z-index: 82;
-        margin-top: 20px;
-        background: url('../assets/navBtn.png') no-repeat center center;
-        -webkit-transition: all 0.3s ease-out 0s;
-        -moz-transition: all 0.3s ease-out 0s;
-        -o-transition: all 0.3s ease-out 0s;
-        transition: all 0.3s ease-out 0s;
+        background: #dedede;
       }
     }
   }

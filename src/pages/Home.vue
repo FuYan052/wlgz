@@ -1,9 +1,7 @@
 <template>
 <div class="homeBox">
   <div class="home">
-		<div id="dowebok">
-    <div class="section section1">
-			<!-- logo -->
+    <!-- logo -->
     <div class="pz_top hidden-xs">
       <div class="top">
           <div class="logo">
@@ -11,44 +9,8 @@
           </div>
       </div>
     </div>
-				<!-- 切换导航页面按钮 -->
-				<div id="navBtn" @mouseover="showNav"></div>
-
-        <div class="slide slide1"></div>
-        <div class="slide slide2">第一屏的第二屏</div>
-        <div class="slide slide3">第一屏的第三屏</div>
-        <div class="slide slide4">第一屏的第四屏</div>
-
-				<!-- 轮播图 -->
-    		<!-- <banner></banner> -->
-    </div>
-    <div class="section section2">
-				<!-- 切换导航页面按钮 -->
-		<div id="navBtn" @mouseover="showNav"></div>
-        <!-- 案例 -->
-    		<home-case></home-case>
-    </div>
-    <div class="section section3">
-				<!-- 切换导航页面按钮 -->
-		<div id="navBtn" @mouseover="showNav"></div>
-        <!-- 服务 -->
-				<Service></Service>
-    </div>
-    <div class="section section4">
-				<!-- 切换导航页面按钮 -->
-		<div id="navBtn" @mouseover="showNav"></div>
-        <!-- 客户 -->
-				<customer></customer>
-    </div>
-    <div class="section section5">
-				<!-- 切换导航页面按钮 -->
-		<div id="navBtn" @mouseover="showNav"></div>
-        <!-- 联系 -->
-				<contact></contact>
-    </div>
-	</div>
     <!-- 轮播图 -->
-    <!-- <banner></banner> -->
+    <banner></banner>
 		<!-- 右侧固定联系方式 -->
 		<div class="rightFixed">
 			<ul>
@@ -76,46 +38,43 @@
 			</ul>
 		</div>
 		<!-- 切换导航页面按钮 -->
-		<!-- <div id="navBtn" @mouseover="showNav"></div> -->
+		<div class="navBtn" @mouseover="showNav">
+      <img src="../assets/navBtn.png" alt="">
+    </div>
     <!-- 左侧导航栏 -->
-      <ul class="leftnav" id="leftNav">
-        <li data-menuanchor="h1" class="first"><a href="#h1" title="蔚蓝公装">1<span>蔚蓝公装</span></a></li>
-        <li data-menuanchor="h2"><a href="#h2" title="案例">2<span>案例</span></a></li>
-        <li data-menuanchor="h3"><a href="#h3" title="服务">3<span>服务</span></a></li>
-        <li data-menuanchor="h4"><a href="#h4" title="客户">4<span>客户</span></a></li>
-        <li data-menuanchor="h5"><a href="#h5" title="联系">5<span>联系</span></a></li>
+      <ul class="leftnav">
+        <li data-menuanchor="1" class="first" @click="scroll(0,0)"><a href="javascrip:viod(0)" title="蔚蓝公装">1<span>蔚蓝公装</span></a></li>
+        <li data-menuanchor="2" @click="scroll(0,910)"><a href="javascrip:viod(0)" title="案例">2<span>案例</span></a></li>
+        <li data-menuanchor="3" @click="scroll(0,1840)"><a href="javascrip:viod(0)" title="服务">3<span>服务</span></a></li>
+        <li data-menuanchor="4" @click="scroll(0,2764)"><a href="javascrip:viod(0)" title="客户">4<span>客户</span></a></li>
+        <li data-menuanchor="5" @click="scroll(0,3662)"><a href="javascrip:viod(0)" title="联系">5<span>联系</span></a></li>
     </ul>
     <!-- 手机可见菜单 -->
     <!-- <div class="pz_top visible-xs">
         <div class="top">
             <div class="logo"><a href="/" title=""><img class="img-responsive" src="../assets/logo.png"></a></div>
             <div class="menulist">
-
                 <li class="l1 first" id="wap_3"><a class="l1_a" href="/list/10/" target="_self" title="案 例">案 例</a></li>
-
-
                 <li class="l1" id="wap_2"><a class="l1_a" href="/page/2.htm" target="_self" title="我 们">我 们</a></li>
-
                 <li class="l1" id="wap_5"><a class="l1_a" href="/list/5/" target="_self" title="客 户">客 户</a></li>
-
             </div>
         </div>
     </div> -->
 
     <!-- 案例 -->
-    <!-- <home-case></home-case> -->
+    <home-case></home-case>
 		<!-- 服务 -->
-		<!-- <Service></Service> -->
+		<Service></Service>
 		<!-- 客户 -->
-		<!-- <customer></customer> -->
+		<customer></customer>
 		<!-- 联系 -->
-		<!-- <contact></contact> -->
+		<contact></contact>
   </div>
 	<!-- 默认隐藏的导航页 -->
 	<div class="navPage" :class="isShowNav? 'navPageShow' : ''">
 		<div class="closed" @click="closeNav">
 			<div class="logo"><a href="/" title=""><img src="../assets/logo.png" alt="" title=""></a></div>
-			<div class="pf_menu_btn"><img src="http://www.chuangwudao.com/templates/cn/images/top3.jpg" alt=""></div>
+			<div class="pf_menu_btn"><img src="../assets/close.jpg" alt=""></div>
 		</div>
 		<div id="navSlide" class="ph_menu">
             <div class='nav_box'>
@@ -164,13 +123,6 @@ export default {
 		return{
 			isShowNav: false
 		}
-	},
-	created() {
-		// $('#dowebok').fullpage({
-    //       scrollOverflow: true,
-    //       anchors:["h1","h2","h3","h4","h5"],   //注意不带#
-    //       menu:"#leftNav"    //绑定菜单，data-menuanchor,才能使用.active
-    // });
 	},
 	methods: {
 		// 滚动条
@@ -231,14 +183,7 @@ export default {
 	height: 100%;
 	.home{
 		width: 100%;
-		height: 100%;
 		position: relative;
-		#dowebok{
-			height: 100%;
-			.section{
-				height: 100%;
-			}
-		}
 		.pz_top{
 			float: left;
 			width: 100%;
@@ -253,7 +198,7 @@ export default {
 			.top{
 				width: 100%;
 				float: left;
-				height: 36px;
+				height: 26px;
 				padding: 0 60px;
 				.logo {
 					float: left;
@@ -377,20 +322,6 @@ export default {
 }
 </style>
 <style>
-.home .section1 .slide1{
-	background: url('../assets/homeBanner.png') no-repeat center;
-	/* background-size: 100% 100%; */
-	background-size: cover;
-}
-.home .section1 .slide2{
-	background: pink;
-}
-.home .section1 .slide3{
-	background: #dedede;
-}
-.home .section1 .slide4{
-	background: paleturquoise;
-}
 .rightFixed{
 	position: fixed;
 	right: 31px;
@@ -456,7 +387,6 @@ export default {
 .rightFixed ul li h4 p {
 	display: inline-block;
 }
-
 .rightFixed ul li:hover {
 	overflow: visible;
 	background: url('../assets/blueBg.png') no-repeat center center;
@@ -465,7 +395,6 @@ export default {
 .rightFixed ul .last:hover {
 	background: none;
 }
-
 .rightFixed ul li:hover h4 {
 	right: 0;
 	opacity: 1;
@@ -497,7 +426,6 @@ export default {
 	-khtml-border-radius: 0px;
 	border-radius: 0px;
 }
-
 .rightFixed ul li:hover .ewm {
 	right: 110%;
 	opacity: 1;
@@ -518,36 +446,27 @@ export default {
 	margin-top: 0.12rem;
   margin-left: 0.13rem;
 }
-#navBtn{
-	position: absolute;
-	cursor: pointer;
-	right: 0.5rem;
-	top: 0.5rem;
-	width: 0.3rem;
-	height: 0.25rem;
-	text-align: center;
-	display: block;
-	z-index: 82;
-	background: url('../assets/navBtn.png') no-repeat center center;
-	background-size: contain;
-	-webkit-transition: all 0.3s ease-out 0s;
-	-moz-transition: all 0.3s ease-out 0s;
-	-o-transition: all 0.3s ease-out 0s;
-	transition: all 0.3s ease-out 0s;
+.navBtn{
+      position: fixed;
+      cursor: pointer;
+      right: 0.5rem;
+      top: 0.5rem;
+      width: 0.4rem;
+      height: 0.32rem;
+      text-align: center;
+      display: block;
+      z-index: 82;
+      margin-top: 20px;
+      background: #f7f7f7ee;
+      -webkit-transition: all 0.3s ease-out 0s;
+      -moz-transition: all 0.3s ease-out 0s;
+      -o-transition: all 0.3s ease-out 0s;
+      transition: all 0.3s ease-out 0s;
+    }
+.navBtn img{
+	margin: 0.08rem 0.1rem;
+  float: left;
 }
-.section1 #navBtn{
-	background: url('../assets/navBtnBai.png') no-repeat center center;
-	background-size: contain;
-}
-.section3 #navBtn{
-	background: url('../assets/navBtnBai.png') no-repeat center center;
-	background-size: contain;
-}
-.section5 #navBtn{
-	background: url('../assets/navBtnBai.png') no-repeat center center;
-	background-size: contain;
-}
-
 .navPage{
 	position: fixed;
 	width: 100%;
@@ -571,7 +490,6 @@ export default {
 	width: 0.8rem;
 	margin-top: -1.3rem;
 }
-
 .home .leftnav:before {
 	content: '';
 	width: 0.01rem;
@@ -582,7 +500,6 @@ export default {
 	left: 50%;
 	top: -95%;
 }
-
 .home .leftnav:after {
 	content: '';
 	width: 0.01rem;
@@ -593,7 +510,6 @@ export default {
 	left: 50%;
 	bottom: -95%;
 }
-
 .home .leftnav li {
 	width: 100%;
 	height: 52px;
@@ -602,7 +518,6 @@ export default {
 	overflow: hidden;
 	position: relative;
 }
-
 .home .leftnav li:before {
 	content: '';
 	width: 0;
@@ -617,7 +532,6 @@ export default {
 	-o-transition: all 0.3s ease-out 0s;
 	transition: all 0.3s ease-out 0s;
 }
-
 .home .leftnav li a {
 	display: block;
 	width: 100%;
@@ -630,50 +544,41 @@ export default {
 	-o-transition: all 0.5s ease-out 0s;
 	transition: all 0.5s ease-out 0s;
 }
-
 .home .leftnav li a span {
 	display: block;
 	width: 100%;
 	float: left;
 	color: #299df4;
 }
-
 .leftnav li:hover a,
 .leftnav li.active a {
 	margin-top: -0.52rem;
 }
-
 .leftnav li.active a {
 	color: white;
 	font-weight: bold;
 }
-
 .leftnav li.active:before {
 	width: 0.23rem;
 	margin-left: -0.12rem;
 }
-
 .leftnav li a {
 	display: block;
 	width: 100%;
 	height: 100%;
 }
-
 /*.leftnav li.first a span{ font-size:12px;font-family: 'OPENSANS-LIGHT';}*/
 .leftnav.white:before,
 .leftnav.white:after {
 	background: #d1d1d1;
 	opacity: 1;
 }
-
 .leftnav.white li a {
 	color: #78777c;
 }
-
 .leftnav.white li.active a {
 	color: #333;
 }
-
 .leftnav.white li:before {
 	background: #d1d1d1;
 	opacity: 0.4;
