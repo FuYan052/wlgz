@@ -18,9 +18,8 @@
               direction="vertical"
               ref='regionItem'
               >
-                <el-carousel-item v-for="item in 2" :key="item">
+                <el-carousel-item>
                     <ul class="ul_1">
-
                         <li class="l1">
                             <div class="zbox"><span>
                                     <div class="ico"><img
@@ -28,7 +27,7 @@
                                             alt="ADDRES" title="ADDRES"></div>
                                     <h4>ADDRES</h4>
                                     <div class="p">
-                                        <p>河北省廊坊市安次区龙河高新技术开发区<br />瑞雪道29号9#厂房9-17室</p>
+                                        <p>四川省成都市高新区益州大道555号<br />星辰国际B座1503号</p>
                                     </div>
                                 </span>
                             </div>
@@ -41,7 +40,7 @@
                                             alt="PHONE" title="PHONE"></div>
                                     <h4>PHONE</h4>
                                     <div class="p">
-                                        <p>189 1125 0929‬</p>
+                                        <p>028-85521744</p>
                                     </div>
                                 </span>
                             </div>
@@ -54,7 +53,7 @@
                                             alt="e-MAIL" title="e-MAIL"></div>
                                     <h4>e-MAIL</h4>
                                     <div class="p">
-                                        <p>lf@chuangwudao.com</p>
+                                        <p>028-85521744</p>
                                     </div>
                                 </span>
                             </div>
@@ -67,7 +66,62 @@
                                             alt="QQ" title="QQ"></div>
                                     <h4>QQ</h4>
                                     <div class="p">
-                                        <p>609912124</p>
+                                        <p>3235046695</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </el-carousel-item>
+                <el-carousel-item>
+                    <ul class="ul_1">
+                        <li class="l1">
+                            <div class="zbox"><span>
+                                    <div class="ico"><img
+                                            src="../../assets/addressIcon.png"
+                                            alt="ADDRES" title="ADDRES"></div>
+                                    <h4>ADDRES</h4>
+                                    <div class="p">
+                                        <p>北京市丰台区大成南里二区<br />3号楼3层0309</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="l2">
+                            <div class="zbox"><span>
+                                    <div class="ico"><img
+                                            src="../../assets/phoneIco.png"
+                                            alt="PHONE" title="PHONE"></div>
+                                    <h4>PHONE</h4>
+                                    <div class="p">
+                                        <p>010-68696223‬</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="l3">
+                            <div class="zbox"><span>
+                                    <div class="ico"><img
+                                            src="../../assets/emailIco.png"
+                                            alt="e-MAIL" title="e-MAIL"></div>
+                                    <h4>e-MAIL</h4>
+                                    <div class="p">
+                                        <p>010-68696223</p>
+                                    </div>
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="l4">
+                            <div class="zbox"><span>
+                                    <div class="ico"><img
+                                            src="../../assets/tencentQQIco.png"
+                                            alt="QQ" title="QQ"></div>
+                                    <h4>QQ</h4>
+                                    <div class="p">
+                                        <p>3235046695</p>
                                     </div>
                                 </span>
                             </div>

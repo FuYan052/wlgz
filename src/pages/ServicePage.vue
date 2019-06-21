@@ -46,6 +46,19 @@
         </div>
       </div>
     </div>
+
+    <!-- 标题 -->
+    <div class="mid">
+        <div class="t1">
+          <span>
+            construction&nbsp;technique
+          </span>
+        </div>
+        <div class="t2">
+          施工技术
+        </div>
+      </div>
+
     <div class="sectBox">
       <div class="sect sect1">
         <div class="ico">
@@ -80,7 +93,7 @@
         </div>
         <div class="detail">
           人工监理不能时刻在场，现场施工不放心，又没时间时刻关注进度，这些烦恼我们通通都懂，并且我们也为您找到了解决办法。我们现场安装智能AI摄像<br />
-          头，时刻关注您的装修进度，按时发送进度报告给您。您在闲暇时还可以在自己手机上查看过往的施工图片和正在进行的施工视频，施工情况一手掌握，不用再为施工监管劳心费力
+          头，时刻关注您的装修进度，按时发送进度报告给您。您在闲暇时还可以在自己手机上查看过往的施工图片和正在进行的施工视频，施工情况一手掌握，不用再为施工监管劳心费力。
         </div>
       </div>
       <div class="sect sect4">
@@ -109,22 +122,20 @@
         </div>
       </div>
       <div class="content">
+        <div class="prev" @click="lastPage(clickCount)">
+
+        </div>
+        <div class="next" @click="nextPage(clickCount)">
+
+        </div>
         <div class="serItem" v-for="item in 4" :key="item">
           <div class="icon"></div>
           <div class="titleBox">
-            <span>
               办公区域
-            </span>
-          </div>
-          <div class="txt">
-            <p>软装服务整配软装定制</p>
-            <p>数十种搭配方案</p>
-            <p>随心挑选，提前解决硬装以后的问题</p>
           </div>
           <div class="pic">
             <img src="../assets/casePic.png" alt="">
           </div>
-          <!-- <div class="moreBtn">more</div> -->
         </div>
       </div>
     </div>
@@ -198,34 +209,107 @@ export default {
     return {
       isShowNav: false,
       activeIndex: 1,
-      list1: []
+      list1: [],
+      imgList: [],
+      currImgList:[],
+      listCount: '',
+      clickCount: 1,
+      start: 0,
+      end: 4
     }
   },
   created() {
     this.list1 = [
       {
-        p1:'激发灵感',
+        p1:'AI智能设计，快速出图',
         p2:'Announcement message',
-        p3:`每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师`
+        p3:`凭借多年的空间设计经验以及空间使用的研究总结，根据不同场景、不同风格研发上百个设计模块及配置单元。通过这些模块化的组合拼接，实现空间设计的矢量化，用AI设计代替人工设计，大大缩短了设计周期，充分节省了客户的等待时间。`
       },
       {
-        p1:'契合企业灵魂',
+        p1:'激发灵感，创造不一般的环境',
         p2:'Safety system     ',
-        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师'
+        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师通过与客户的沟通和交流，按照客户对空间的使用用途，使用频率等方面综合考虑，优化空间的布局，妥善设置各种设施，激发团队的灵感，创造不一样的空间。'
       },
       {
-        p1:'彰显文化底蕴',
+        p1:'彰显文化底蕴，切合企业的灵魂',
         p2:'Boom shakalak',
-        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师'
+        p3:'无论是商业大厦，餐饮店铺还是企业办公室，每一个业主都是希望自己的物业彰显出自己的品味，体现出企业的文化底蕴，无形中让访客和员工都被熏陶，自然而言的感受到业主的用心处。我们的设计充分理解业主的这种需求，恰到好处的实现业主的需求，让建筑可以说话，展现不一样的风情。'
       },
       {
-        p1:'包容多样需求',
+        p1:'包容多样需求，满足不同功能场景',
         p2:'Announcement message',
-        p3:'每一个客户都希望自己的环境独特而又不枯燥，充满生机而又不凌乱。我们的设计师'
+        p3:'每一次装修都源于一次对美的追求，美的展示方式千万种，但我们就是能在千万种美中找到最适合你的，无论是办公，餐饮，商厦或是各种不同功能分区，我们都能为您做到恰好的设计，包容各类需求。好的装修源于一次成功的设计。'
       },
     ]
+
+    this.imgList = [
+      {
+        title: '敞开办公区',
+        url: require('../assets/rz-1.png')
+      },{
+        title: '大厅',
+        url: require('../assets/rz-2.png')
+      },
+      {
+        title: '等待区',
+        url: require('../assets/rz-3.png')
+      },{
+        title: '电梯间',
+        url: require('../assets/rz-4.png')
+      },
+      {
+        title: '多功能厅',
+        url: require('../assets/rz-5.png')
+      },{
+        title: '会议室',
+        url: require('../assets/rz-6.png')
+      },
+      {
+        title: '健身房',
+        url: require('../assets/rz-7.png')
+      },{
+        title: '就餐区',
+        url: require('../assets/rz-8.png')
+      },
+      {
+        title: '洽谈室',
+        url: require('../assets/rz-9.png')
+      },{
+        title: '休闲区',
+        url: require('../assets/rz-10.png')
+      },
+      {
+        title: '展览厅',
+        url: require('../assets/rz-11.png')
+      },{
+        title: '总裁办公室',
+        url: require('../assets/rz-12.png')
+      },{
+        title: '走廊',
+        url: require('../assets/rz-13.png')
+      }
+    ]
+
+    // 第一次进入是当前页数据列表
+      this.currImgList = this.imgList.slice(this.start, this.end)
+      this.listCount = Math.ceil(this.imgList.length / 4)
+      console.log(this.listCount)
   },
   methods:{
+    lastPage(curr) {
+      this.clickCount = curr - 1
+      if(this.clickCount < 1) {
+        this.clickCount = 1
+      }
+      console.log(this.clickCount)
+    },
+    nextPage(curr) {
+      this.clickCount = curr + 1
+      if(this.clickCount > this.listCount) {
+        this.clickCount = this.listCount
+      }
+      console.log(this.clickCount)
+    },
     // 鼠标滑过按钮显示导航页
 		showNav(){
 			this.isShowNav = true
@@ -375,13 +459,13 @@ export default {
     word-spacing: 0.01rem;
   }
   .wrap1{
-    width: 71.77%;
+    width: 80%;
     height: 6.85rem;
     margin: 0 auto;
     position: relative;
     .item{
       width: 25%;
-      height: 5rem;
+      height: 5.8rem;
       font-size: 0.18rem;
       float: left;
       cursor: pointer;
@@ -394,7 +478,7 @@ export default {
       }
       .blue{
         width: 100%;
-        height: 1.9rem;
+        height: 2.65rem;
         margin-top: -0.17rem;
         box-sizing: content-box;
         padding-top: 0.2rem;
@@ -412,10 +496,10 @@ export default {
           margin-top: 0.1rem;
         }
         .p3{
-          width: 70%;
+          width: 80%;
           font-size: 0.14rem;
           color: #888888;
-          line-height: 0.27rem;
+          line-height: 0.22rem;
           margin: 0 auto;
           margin-top: 0.15rem;
         }
@@ -503,6 +587,56 @@ export default {
       .blue::before{
         background: url('../assets/ser_tri.png') no-repeat center;
       }
+    }
+  }
+
+  .mid{
+    width: 100%;
+    height: 1.46rem;
+    margin: 0.5rem auto;
+    margin-top: 0;
+    padding-top: 0.8rem;
+    overflow: hidden;
+    .t1{
+      width: 100%;
+      height: 0.36rem;
+      line-height: 0.36rem;
+      font-size: 0.22rem;
+      color: #343b43;
+      text-align: center;
+      position: relative;
+      font-weight: bold;
+      span{
+        display: block;
+      }
+      span::before{
+        content: '';
+        width: 39%;
+        height: 100%;
+        background: url('../assets/33.png') no-repeat right center;
+        background-size: 90% 0.02rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      span::after{
+        content: '';
+        width: 39%;
+        height: 100%;
+        background: url('../assets/34.png') no-repeat left center;
+        background-size: 90% 0.02rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+    .t2{
+      width: 100%;
+      height: 0.18rem;
+      font-size: 0.18rem;
+      line-height: 0.28rem;
+      text-align: center;
+      color: #383838;
     }
   }
   .sectBox{
@@ -606,6 +740,25 @@ export default {
       justify-content: space-between;
       box-sizing: border-box;
       padding-top: 0.4rem;
+      position: relative;
+      .prev{
+        width: 0.4rem;
+        height: 0.6rem;
+        background: #ccc;
+        position: absolute;
+        top: 45%;
+        left: -12%;
+        cursor: pointer;
+      }
+      .next{
+        width: 0.4rem;
+        height: 0.6rem;
+        background: #ccc;
+        position: absolute;
+        top: 45%;
+        right: -12%;
+        cursor: pointer;
+      }
       .serItem{
         width: 22.27%;
         height: 4.2rem;
@@ -616,84 +769,19 @@ export default {
           width: 0.79rem;
           height: 0.79rem;
           background: url('../assets/ser11.png') no-repeat center;
-          border-radius: 50%;
-          position: absolute;
-          top: -9.5%;
-          left: 33%;
+          margin: 0 auto;
+          margin-top: -21.5%;
         }
         .titleBox{
           width: 100%;
           height: 0.6rem;
-          position: absolute;
-          top: 1.02rem;
-          left: 0;
-          span{
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 33%;
-            width: 0.84rem;
-            height: 0.58rem;
-            font-size: 0.24rem;
-            box-sizing: border-box;
-            text-align: center;
-            padding: 0 0.14rem;
-            letter-spacing: 0.01rem;
-          }
-          span::before{
-            content: '';
-            width: 70%;
-            height: 100%;
-            background: url('../assets/34.png') no-repeat left center;
-            background-size: 100% 0.02rem;
-            position: absolute;
-            right: -70%;
-            top: 0;
-          }
-          span::after{
-            content: '';
-            width: 70%;
-            height: 100%;
-            background: url('../assets/33.png') no-repeat left center;
-            position: absolute;
-            left: -70%;
-            top: 0;
-          }
-        }
-        .txt{
+          font-size: 0.24rem;
           text-align: center;
-          width: 74%;
-          height: auto;
-          margin: 0 auto;
-          margin-top: 2.5rem;
-          opacity: 1;
-          p{
-            width: 100%;
-            height: 0.24rem;
-            font-size: 0.12rem;
-            line-height: 0.24rem;
-            color: #383838;
-            overflow: hidden;
-          }
-        }
-        .moreBtn{
-          width: 0.97rem;
-          height: 0.35rem;
-          text-align: center;
-          line-height: 0.35rem;
-          font-size: 0.12rem;
-          color: #9dc8ea;
-          position: absolute;
-          background: #fff;
-          border: 2px solid #9dc8ea;
-          top: 96%;
-          left: 29.25%;
-          z-index: 29;
+          margin-top: 0.2rem;
         }
         .pic{
           width: 100%;
-          height: 3.2rem;
-          opacity: 0;
+          height: 3rem;
           position: absolute;
           left: 0;
           bottom: 0;
@@ -706,48 +794,6 @@ export default {
       .serItem:hover{
         .icon{
           background: url('../assets/32.png') no-repeat center;
-          -webkit-transition: all 0.3s ease-out 0s;
-          -moz-transition: all 0.3s ease-out 0s;
-          -o-transition: all 0.3s ease-out 0s;
-          transition: all 0.3s ease-out 0s;
-        }
-        .titleBox{
-          top: 0.5rem;
-          -moz-transition: all 0.3s ease-out 0s;
-          -o-transition: all 0.3s ease-out 0s;
-          transition: all 0.3s ease-out 0s;
-          span{
-            width: 1.2rem;
-            height: 0.3rem;
-            width: 1.5rem;
-            height: 0.3rem;
-            left: 19%;
-          }
-          span::before{
-            width: 40%;
-            right: -40%;
-          }
-          span::after{
-            width: 40%;
-            left: -40%;
-          }
-        }
-        .txt{
-          opacity: 0;
-          -webkit-transition: all 0.3s ease-out 0s;
-          -moz-transition: all 0.3s ease-out 0s;
-          -o-transition: all 0.3s ease-out 0s;
-          transition: all 0.3s ease-out 0s;
-        }
-        .pic{
-          opacity: 1;
-          -webkit-transition: all 0.3s ease-out 0s;
-          -moz-transition: all 0.3s ease-out 0s;
-          -o-transition: all 0.3s ease-out 0s;
-          transition: all 0.3s ease-out 0s;
-        }
-        .moreBtn{
-          background: #299df4;
           -webkit-transition: all 0.3s ease-out 0s;
           -moz-transition: all 0.3s ease-out 0s;
           -o-transition: all 0.3s ease-out 0s;
@@ -888,7 +934,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #337ab7;
 						font-weight: bold;
 						i{
 							font-weight: normal;
@@ -929,7 +975,10 @@ export default {
 <style>
 @media screen and (max-width: 1360px){
   .service .wrap1{
-    height: 6.25rem !important;
+    /* height: 6.25rem !important; */
+  }
+  .service .wrap1 .item .blue{
+    height: 2.95rem !important;
   }
   .service .wrap1 .item{
     height: auto;
@@ -962,6 +1011,11 @@ export default {
 .service .wrap2 .title .t1 span::after{
   width: 33% !important;
 }
+}
+@media screen and (max-width: 1260px) {
+  .service .wrap1 .item .blue{
+    height: 3.2rem !important;
+  }
 }
 </style>
 

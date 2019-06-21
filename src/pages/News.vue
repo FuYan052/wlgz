@@ -51,7 +51,7 @@
             <p class="p3">
               {{item.month}} / 
               <span>
-                {{item.year}}
+              {{item.year}}
               </span>
             </p>
           </div>
@@ -668,7 +668,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #337ab7;
 						font-weight: bold;
 						i{
 							font-weight: normal;

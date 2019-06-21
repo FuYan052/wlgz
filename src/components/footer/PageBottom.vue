@@ -13,8 +13,21 @@
             </li>
           </ul>
         
-        
-        <!-- <ul>
+      </div>
+
+      <div class="mid">
+        <div class="left">
+          <ul>
+            <li><span>智能设计</span></li>
+            <li><span>高效省时</span></li>
+            <li><span>直选班组</span></li>
+            <li><span>无中间价</span></li>
+            <li><span>先装后付</span></li>
+            <li><span>征信白条</span></li>
+          </ul>
+        </div>
+        <div class="center">
+          <ul>
           <li>
             地址：<span>成都市高新区益州大道中段星宸国际B座1503号</span>
           </li>
@@ -28,54 +41,21 @@
             Q Q：<span>3235046695</span>
           </li>
           <li>
-            邮箱：<span>baogongxia@163.com</span>
+            邮箱：<span>weilaigongzhuang@163.com</span>
           </li>
-        </ul> -->
-      </div>
-      <div class="left">
-        
-        <div class="weixin">
-          <p>
-            <img src="../../assets/weixin.png" alt="">
-          </p>
-          <div class="weixinWrap">
-            <!-- <img src="../../assets/weixin.png" alt=""> -->
-          </div>
+        </ul>
+        </div>
+        <div class="right">
+          <p>公众号:</p>
+          <img src="../../assets/gonzhonghao.jpg" alt="">
         </div>
       </div>
-      <div class="right">
-        <div class="navWrap">
-          <!-- <ul>
-            <li 
-            v-for="(item,index) in list" 
-            :key="index" 
-            @click="toPage(item,index)"
-            >
-              {{item.name}}
-            </li>
-            <li>案例</li>
-            <li>服务</li>
-            <li>客户</li>
-            <li>新闻</li>
-            <li>我们</li>
-          </ul> -->
-        </div>
-        <div class="rightBottom">
-          <ul>
-            <li><span>智能设计</span></li>
-            <li><span>高效省时</span></li>
-            <li><span>直选班组</span></li>
-            <li><span>无中间价</span></li>
-            <li><span>先装后付</span></li>
-            <li><span>征信白条</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
+
     <div class="PageFooter">
       <div class="footer">
         <p>北京同创新业科技有限公司COPYRIGHT©2017包工侠baogongxia.com 备案号： 京ICP1备16032010号</p>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -133,7 +113,6 @@ export default {
   width: 100%;
   height: 5.94rem;
   background: #fafafa;
-  border: 1px solid red;
   overflow: hidden;
   .contBox{
     width: 100%;
@@ -172,83 +151,69 @@ export default {
           }
       }
     }
-    .left{
-      width: 50%;
-      float: left;
-      
-      
-      .weixin{
-        padding-top: 0.1rem;
-        p{
-          height: 0.26rem;
-          img{
-            width: 0.26rem;
-            height: 0.26rem;
-            float: left;
-          }
-        }
-        .weixinWrap{
-          width: 1.26rem;
-          height: 1.26rem;
-          margin-top: 0.2rem;
-          background: #b1b1b1;
-          img{
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
-    .right{
-      width: 50%;
-      float: right;
-      .navWrap{
-        width: 100%;
-        height: 1.9rem;
-        margin-top: 1.78rem;
-        border-bottom: 2px solid #e8e8e8;
+    .mid{
+      width: 100%;
+      height: 3.6rem;
+      .left{
+        width: 29.68%;
+        height: 100%;
+        float: left;
+        border-right: 2px solid #f1f1f1;
         ul{
           width: 100%;
+          height: 100%;
+          font-size: 0;
+          padding-top: 0.55rem;
+          padding-right: 7.5%;
           li{
-            width: 33%;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+            width: 33.5%;
+            height: 0.57rem;
+            border: 2px solid #e8e8e8;
             color: #9a9a9a;
             font-size: 0.18rem;
-            float: left;
-            height: 0.3rem;
-            line-height: 0.3rem;
-            margin-top: 0.5rem;
-            cursor: pointer;
+            line-height: 0.57rem;
+            text-align: center;
+          }
+          li:nth-child(odd){
+            margin-left: 17%;
+          }
+          li:nth-child(even){
+            margin-left: 13.5%;
           }
         }
       }
-      .rightBottom{
-        width: 100%;
-        height: 3rem;
-        box-sizing: border-box;
-        padding-top: 0.15rem;
+      .center{
+        width: 47.3%;
+        height: 100%;
+        float: left;
+        padding-top: 0.55rem;
+        padding-left: 8.5%;
         ul{
-          width: 100%;
           li{
-            float: left;
-            height: 0.57rem;
-            margin-top: 0.25rem;
-            span{
-              display: block;
-              width: 1.8rem;
-              height: 0.55rem;
-              border: 2px solid #e8e8e8;
-              color: #9a9a9a;
-              font-size: 0.18rem;
-              line-height: 0.55rem;
-              text-align: center;
-            }
+            color: #9f9f9f;
+            font-size: 0.18rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.01rem;
           }
-          li:nth-child(odd){
-            width: 50.8%;
-          }
-          li:nth-child(even){
-            width: 46%;
-          }
+        }
+      }
+      .right{
+        width: 15%;
+        height: 100%;
+        float: left;
+        padding-top: 0.55rem;
+        p{
+          padding-left: 0.1rem;
+          color: #9f9f9f;
+          font-size: 0.18rem;
+        }
+        img{
+          width: 1.4rem;
+          height: 1.4rem;
+          margin-top: 0.25rem;
+          float: left;
         }
       }
     }

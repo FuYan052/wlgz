@@ -131,6 +131,7 @@ export default {
         path: '/caseDetail',
         params: item,
       })
+      sessionStorage.setItem("case", JSON.stringify(item));
     },
     // 点击页码
     pageChange(pageNumber){

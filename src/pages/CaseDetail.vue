@@ -15,23 +15,22 @@
 			返回列表
 		</div>
 		<div class="left">
-			<img src="../assets/newsBg.png" alt="">
-			<img src="../assets/newsBg.png" alt="">
-			<img src="../assets/newsBg.png" alt="">
+			<img v-for="(item,index) in this.case.img" :key="index" :src="item.url" alt="">
+			<!-- <img src="../assets/newsBg.png" alt="">
+			<img src="../assets/newsBg.png" alt=""> -->
 			<div class="white"></div>
 			<div class="text">
 				<p>
-				主进行装修前可以充分考察施工班组的业绩及信用，直接选择满意的班组施工，不需要支付任何额外费用，拒绝中间商加价，用最低的价格做最好的装修。主进行装修前可以充分考察施工班组的业绩及信用，直接选择满意的班组施工，不需要支付任何额外费用，拒绝中间商加价，用最低的价格做最好的装修。主进行装修前可以充分考察施工班组的业绩及信用，直接选择满意的班组施工，不需要支付任何额外费用，拒绝中间商加价，用最低的价格做最好的装修。主进行装修前可以充分考察施工班组的业绩及信用，直接选择满意的班组施工，不需要支付任何额外费用，拒绝中间商加价，用最低的价格做最好的装修。
-				主进行装修前可以充分考察施工班组的业绩及信用，直接选择满意的班组施工，不需要支付任何额外费用，拒绝中间商加价，用最低的价格做最好的装修。
+					{{this.case.details}}
 				</p>
 			</div>
 		</div>
 		<div class="right">
 			<div class="t1">
-				蔚蓝公装
+				{{this.case.name}}
 			</div>
 			<div class="t2">
-				weilanggongzhuang
+				{{this.case.address}}
 			</div>
 		</div>
 	</div>
@@ -81,9 +80,14 @@ export default {
   },
   data() {
     return {
-      isShowNav: false,
+			isShowNav: false,
+			case: ''
     }
-  },
+	},
+	created() {
+		this.case = JSON.parse(sessionStorage.getItem('case'))
+		console.log(this.case)
+	},
   methods: {
 		back(){
 			this.$router.push({
@@ -212,10 +216,10 @@ export default {
 		.text{
 			width: 100%;
 			height: auto;
-			padding: 0.2rem 7.6%;
+			padding: 0 7.6%;
 			font-size: 0.18rem;
 			color: #6a6c69;
-			line-height: 0.35rem;
+			line-height: 0.4rem;
 			background: #f7f7f7;
 		}
 	}
@@ -227,8 +231,8 @@ export default {
 		vertical-align: top;
 		.t1{
 			width: 100%;
-			height: 0.54rem;
-			line-height: 0.54rem;
+			// height: 0.54rem;
+			// line-height: 0.54rem;
 			font-size: 0.24rem;
 			padding-left: 0.73rem;
 			margin-top: 1.25rem;
@@ -350,7 +354,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #337ab7;
 						font-weight: bold;
 						i{
 							font-weight: normal;

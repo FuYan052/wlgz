@@ -130,6 +130,9 @@ export default {
       },
       {
         url: require('../assets/logo15.jpg')
+      },
+      {
+        url: require('../assets/logo16.jpg')
       }],
     ]
   },
@@ -312,7 +315,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #337ab7;
 						font-weight: bold;
 						i{
 							font-weight: normal;

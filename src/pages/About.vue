@@ -53,8 +53,10 @@
         协助房地产商建立完善室内设计管理及运营标准<br />
       </div>
     </div>
+
+
     <!-- 团队 -->
-    <div class="teamTitle">
+    <!-- <div class="teamTitle">
       设计团队
     </div>
     <div class="team">
@@ -68,7 +70,27 @@
           <p>设计理念：源于生活&nbsp;定制创新&nbsp;细节体验</p>
         </div>
       </div>
+    </div> -->
+
+  <!-- 加入我们 -->
+  <div class="jion">
+    <div class="title">
+        <img src="../assets/joinTitle.png" alt="">
     </div>
+    <div class="content">
+      <div class="left">
+        <img src="../assets/join1.png" alt="">
+        <P class="p1">加入我们</P>
+        <p class="p2">暂无职位</p>
+      </div>
+      <div class="right">
+        <img src="../assets/join2.png" alt="">
+        <P class="p1">业务合作</P>
+        <p class="p2">施工班组、设计团队、欢迎加盟</p>
+      </div>
+    </div>
+  </div>
+
     <!-- 网页脚部 -->
     <page-bottom></page-bottom>
     <!-- 默认隐藏的导航页 -->
@@ -248,58 +270,126 @@ export default {
     padding-bottom: 0.45rem;
     text-align: center;
   }
-  .teamTitle{
+
+  .jion{
     width: 100%;
-    text-align: center;
-    font-size: 0.42rem;
-    margin-top: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  .team{
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-    margin-bottom: 0.9rem;
-    .item{
+    height: 7.65rem;
+    .title{
       width: 100%;
-      height: 2.14rem;
+      height: auto;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .content{
+      width: 100%;
+      height: 4.8rem;
+      padding: 0 16%;
       .left{
-        width: 34.78%;
-        height: 100%;
+        width: 50%;
+        height: 4.3rem;
         float: left;
+        margin-top: 0.84rem;
+        border-right: 2px solid #eaeaea;
         img{
-          width: 50%;
-          height: 100%;
+          width: 67%;
+          display: block;
+          margin: 0.5rem auto;
+        }
+        .p1{
+          width: 100%;
+          font-size: 0.28rem;
+          text-align: center;
+        }
+        .p2{
+          width: 100%;
+          font-size: 0.22rem;
+          text-align: center;
+          margin-top: 0.9rem;
         }
       }
       .right{
-        width: 61.84%;
-        height: 100%;
+        width: 50%;
+        height: 4.3rem;
         float: right;
-        box-sizing: border-box;
-        padding-top: 1.05rem;
-        p{
-          font-size: 0.18rem;
-          line-height: 0.35rem;
-          color: #808588;
-        }
-      }
-    }
-    .item:nth-child(odd){
-      .left{
+        margin-top: 0.84rem;
         img{
-          float: right;
+          width: 67%;
+          display: block;
+          margin: 0.5rem auto;
         }
-      }
-    }
-    .item:nth-child(even){
-      .left{
-        img{
-          float: left;
+        .p1{
+          width: 100%;
+          font-size: 0.28rem;
+          text-align: center;
+        }
+        .p2{
+          width: 100%;
+          font-size: 0.22rem;
+          text-align: center;
+          margin-top: 0.9rem;
         }
       }
     }
   }
+
+
+
+  // .teamTitle{
+  //   width: 100%;
+  //   text-align: center;
+  //   font-size: 0.42rem;
+  //   margin-top: 1.2rem;
+  //   margin-bottom: 0.5rem;
+  // }
+
+
+  // .team{
+  //   width: 90%;
+  //   height: auto;
+  //   margin: 0 auto;
+  //   margin-bottom: 0.9rem;
+  //   .item{
+  //     width: 100%;
+  //     height: 2.14rem;
+  //     .left{
+  //       width: 34.78%;
+  //       height: 100%;
+  //       float: left;
+  //       img{
+  //         width: 50%;
+  //         height: 100%;
+  //       }
+  //     }
+  //     .right{
+  //       width: 61.84%;
+  //       height: 100%;
+  //       float: right;
+  //       box-sizing: border-box;
+  //       padding-top: 1.05rem;
+  //       p{
+  //         font-size: 0.18rem;
+  //         line-height: 0.35rem;
+  //         color: #808588;
+  //       }
+  //     }
+  //   }
+  //   .item:nth-child(odd){
+  //     .left{
+  //       img{
+  //         float: right;
+  //       }
+  //     }
+  //   }
+  //   .item:nth-child(even){
+  //     .left{
+  //       img{
+  //         float: left;
+  //       }
+  //     }
+  //   }
+  // }
   .navPage{
     position: fixed;
     width: 100%;
@@ -400,7 +490,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #337ab7;
 						font-weight: bold;
 						i{
 							font-weight: normal;

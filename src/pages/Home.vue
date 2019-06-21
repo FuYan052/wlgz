@@ -17,19 +17,19 @@
 				<li>
 						<img src="../assets/weixinIco.png" alt="">
 						<div class="ewm">
-								<p><img src="../assets/weixinIco.png" title="" alt="" /></p>
+								<p><img src="../assets/lianxima.png" title="" alt="" /></p>
 						</div>
 				</li>
 				<li class="smile"><a href="javascript:;" class="r_tel1">
 								<img src="../assets/smile.png" alt="">
 								<h4><img src="../assets/smile.png" alt="">
-										<p>15901331708</p>
+										<p>18615777604</p>
 								</h4>
 						</a></li>
 				<li><a href="javascript:;" class="r_tel2">
 								<img src="../assets/qqIco.png" alt="">
 								<h4><img src="../assets/qqIco.png" alt="">
-										<p>010-85891412</p>
+										<p>028-85521744</p>
 								</h4>
 						</a></li>
 				<li class="last" @click="scroll(0,0)"><a href="javascript:;">

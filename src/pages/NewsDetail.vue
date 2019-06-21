@@ -202,7 +202,7 @@ export default {
 			color: #fff;
 			position: absolute;
 			bottom: 0;
-			right: 5.3%;
+			right: 4%;
 			cursor: pointer;
 		}
   }
@@ -339,7 +339,7 @@ export default {
 				}
 				.nli:hover{
 					.l1_a {
-						color: #fa2812;
+						color: #337ab7;
 						font-weight: bold;
 						i{
 							font-weight: normal;
